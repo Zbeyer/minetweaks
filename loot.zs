@@ -121,10 +121,12 @@ for i, chest in allChests {
         vanilla.loot.addChestLoot(chest,  <Thaumcraft:FocusFire>.weight(10));
         vanilla.loot.addChestLoot(chest,  <Thaumcraft:FocusFrost>.weight(10));
         vanilla.loot.addChestLoot(chest,  <Thaumcraft:BootsTraveller>.weight(10));
-
-        vanilla.loot.addChestLoot(chest,  <ExtraUtilities:unstableingot:2>.weight(50), 1, 64);
-
+        vanilla.loot.addChestLoot(chest,  <Thaumcraft:ItemLootBag>.weight(250), 1, 3);
+        vanilla.loot.addChestLoot(chest,  <Thaumcraft:ItemLootBag:1>.weight(250), 1, 3);
+        vanilla.loot.addChestLoot(chest,  <Thaumcraft:ItemLootBag:2>.weight(250), 1, 3);
         vanilla.loot.addChestLoot(chest,  <Thaumcraft:ItemGoggles>.weight(10));
+        
+        vanilla.loot.addChestLoot(chest,  <ExtraUtilities:unstableingot:2>.weight(50), 1, 64);
 
         vanilla.loot.addChestLoot(chest,    <Avaritia:Endest_Pearl>.weight(1));
         vanilla.loot.addChestLoot(chest,    <Avaritia:Resource:4>.weight(1), 1, 64); //neutroniumIngot
