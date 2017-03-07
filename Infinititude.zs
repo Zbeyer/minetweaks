@@ -75,6 +75,10 @@ val saplingSilverwood   = <Thaumcraft:blockCustomPlant:1>;
 //Thaumcraft Resources
 //list of all Thaumcraft research IDs: http://paste.ee/p/g82kJ
 val alumentum           = <Thaumcraft:ItemResource>;
+
+furnace.setFuel(alumentum, 640000);
+
+
 val nitor               = <Thaumcraft:ItemResource:1>;
 val thaumium            = <Thaumcraft:ItemResource:2>;
 val quicksilver         = <Thaumcraft:ItemResource:3>;
