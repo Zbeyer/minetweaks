@@ -36,7 +36,7 @@ val infinityIngot       = <Avaritia:Resource:6>;
 
 
 //Botania Resources
-val seaLantern  = <Botania:seaLamp>;
+val seaLantern          = <Botania:seaLamp>;
 val manaSteel           = <Botania:manaResource>;
 val manaPearl           = <Botania:manaResource:1>;
 val manaDiamond         = <Botania:manaResource:2>;
@@ -100,12 +100,12 @@ val runicMatrix         = <Thaumcraft:blockStoneDevice:2>;
 val thaumcraftPlants    = <Thaumcraft:blockCustomPlant:*>;	//silverwood/greatwood sapling, shimmerleaf, cinderpearl, ethereal bloom, vishroom
 
 val shards  = <Thaumcraft:ItemShard:*>;
-val airShard        = <Thaumcraft:ItemShard:0>;
-val fireShard       = <Thaumcraft:ItemShard:1>;
-val waterShard      = <Thaumcraft:ItemShard:2>;
-val earthShard      = <Thaumcraft:ItemShard:3>;
-val orderShard      = <Thaumcraft:ItemShard:4>;
-val entropyShard    = <Thaumcraft:ItemShard:5>;
+val airShard        = <Thaumcraft:ItemShard:0>; //aer 5
+val fireShard       = <Thaumcraft:ItemShard:1>; //ignis 5
+val waterShard      = <Thaumcraft:ItemShard:2>; //aqua 5
+val earthShard      = <Thaumcraft:ItemShard:3>; //terra 5
+val orderShard      = <Thaumcraft:ItemShard:4>; //ordo 5,
+val entropyShard    = <Thaumcraft:ItemShard:5>; //perditio 5
 val balancedShard       = <Thaumcraft:ItemShard:6>;
 
 val quicksilverNugget   = <Thaumcraft:ItemNugget:5>;
@@ -128,6 +128,8 @@ val emerald         = <minecraft:emerald>;
 val gold            = <minecraft:gold_ingot>;
 val iron            = <minecraft:iron_ingot>;
 val stone           = <minecraft:stone>;
+
+val rottenFlesh     = <minecraft:rotten_flesh>;
 
 val dropper         = <minecraft:dropper>;
 
@@ -166,92 +168,147 @@ val bonemeal        = <minecraft:dye:15>;
 *  For All things related to the subject of Infinitude Corpos
 */
 
-mods.thaumcraft.Research.addTab("INFINITUDE", "thaumcraft", "textures/items/brain.png");
-game.setLocalization("en_US", "tc.research_category.INFINITUDE", "Infinitude Corpos");
+mods.thaumcraft.Research.addTab("INFINITUDE", "thaumcraft", "textures/items/nodes.png");
+game.setLocalization("en_US", "zb.research_category.INFINITUDE", "Infinitude");
+
+mods.thaumcraft.Research.addResearch("ORDERANDANARCHY", "INFINITUDE", "", 1, -2, 8, quicksilver);
+game.setLocalization("en_US", "zb.research_name.ORDERANDANARCHY", "Order & Anarchy");
+game.setLocalization("en_US", "zb.research_page.ORDERANDANARCHY", "<BR>The veil seems thinner.<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/>");
+mods.thaumcraft.Research.setAutoUnlock("ORDERANDANARCHY", true);
+mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
 
 /**
 *  Re-imagining The Simple
 *  INFINITUDE Research Tree
 */
 
-mods.thaumcraft.Research.addResearch("SIMPLE", "INFINITUDE", "ordo 10, perditio 10", 1, 0, 8, nitor);
-game.setLocalization("en_US", "tc.research_name.SIMPLE", "Re-imagining The Simple");
+mods.thaumcraft.Research.addResearch("SIMPLE", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 1, -1, 8, nitor);
+game.setLocalization("en_US", "zb.research_name.SIMPLE", "Re-imagining The Simple");
+game.setLocalization("en_US", "zb.research_page.SIMPLE", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their primal form(s). They can be  twisted, manipulated, and bent into all kinds of states. In the end, matter and energy seem quite malleable.<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR><BR/>");
 
-// mods.thaumcraft.Research.setSpikey("SIMPLE", true);
-mods.thaumcraft.Research.setAutoUnlock("SIMPLE", true);
+mods.thaumcraft.Research.addPrereq("SIMPLE", "ORDERANDANARCHY", false);
 
-mods.thaumcraft.Arcane.addShaped("SIMPLE", <minecraft:lava_bucket>, "ignis 10", [
-    [null,      fireShard,          null],
-    [null,      blazePowder,        null],
-    [null,      <minecraft:bucket>, null]]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", <minecraft:lava_bucket>);
-
-mods.thaumcraft.Arcane.addShaped("SIMPLE", nitor, "ignis 5", [
-    [null,                  redStone,           null],
-    [null,                  blazePowder,        null],
-    [<minecraft:torch>,     <minecraft:torch>,  <minecraft:torch>]]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", nitor);
-
-mods.thaumcraft.Arcane.addShaped("SIMPLE", nitorHyper, "ignis 5", [
-    [null,                  fireShard,      null],
-    [null,                  nitor,          null],
-    [null,     fireShard,      null]]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", nitorHyper);
-
-mods.thaumcraft.Arcane.addShaped("SIMPLE", alumentum, "ignis 5", [
-    [null,                  orderShard,         null],
-    [null,                  nitorHyper,         null],
-    [null,                  entropyShard,       null]]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", alumentum);
-
-mods.thaumcraft.Arcane.addShaped("SIMPLE", thaumium, "ordo 5, perditio 5", [
+mods.thaumcraft.Arcane.addShaped("SIMPLE", thaumium, "aer 4, ignis 4, ordo 4, perditio 4", [
     [null,                  orderShard,         null],
     [null,                  iron,               null],
     [null,                  entropyShard,       null]]);
 mods.thaumcraft.Research.addArcanePage("SIMPLE", thaumium);
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", balancedShard, "aer 5, ordo 5, aqua 5, ignis 5, perditio 5, terra 5",
+mods.thaumcraft.Arcane.addShaped("SIMPLE", magicTallow, "aer 2, ignis 2, ordo 2, perditio 2", [
+    [null,                  orderShard,         null],
+    [null,                  rottenFlesh,        null],
+    [null,                  entropyShard,       null]]);
+mods.thaumcraft.Research.addArcanePage("SIMPLE", magicTallow);
+
+mods.thaumcraft.Arcane.addShaped("SIMPLE", nitor, "aer 3, ignis 9, ordo 3", [
+    [null,                  orderShard,                 null],
+    [null,                  <minecraft:glowStoneDust>,  null],
+    [null,                  entropyShard,               null]]);
+mods.thaumcraft.Research.addArcanePage("SIMPLE", nitor);
+
+// mods.thaumcraft.Arcane.addShaped("SIMPLE", nitor, "ignis 5", [
+//     [null,                  redStone,           null],
+//     [null,                  blazePowder,        null],
+//     [<minecraft:torch>,     <minecraft:torch>,  <minecraft:torch>]]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", nitor);
+
+mods.thaumcraft.Arcane.addShaped("SIMPLE", alumentum, "ignis 6, ordo 3, perditio 3", [
+    [null,                  orderShard,                 null],
+    [null,                  <minecraft:coal:*>,         null],
+    [null,                  entropyShard,               null]]);
+mods.thaumcraft.Research.addArcanePage("SIMPLE", alumentum);
+
+// mods.thaumcraft.Arcane.addShaped("SIMPLE", <minecraft:lava_bucket>, "ignis 10", [
+//     [null,      fireShard,          null],
+//     [null,      blazePowder,        null],
+//     [null,      <minecraft:bucket>, null]]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", <minecraft:lava_bucket>);
+
+mods.thaumcraft.Arcane.addShaped("SIMPLE", nitorHyper, "aer 4, ignis 8, ordo 4, perditio 4", [
+    [null,                  fireShard,      null],
+    [null,                  nitor,          null],
+    [null,                  fireShard,      null]]);
+mods.thaumcraft.Research.addArcanePage("SIMPLE", nitorHyper);
+
+
+mods.thaumcraft.Arcane.addShapeless("SIMPLE", balancedShard*2, "aer 2, ignis 2, ordo 2, perditio 2",
     [airShard, fireShard, waterShard, earthShard, orderShard, entropyShard, redStone]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", balancedShard);
+mods.thaumcraft.Research.addArcanePage("SIMPLE", balancedShard*2);
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", <Thaumcraft:WandCap:2>, "aer 5, ordo 5, aqua 5, ignis 5, perditio 5, terra 5",
-    [<Thaumcraft:WandCap:6>, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", <Thaumcraft:WandCap:2>);
+/**
+*  Alternative Infusion
+*  INFINITUDE Research Tree
+*/
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", <Thaumcraft:WandRod:2>, "aer 5, ordo 5, aqua 5, ignis 5, perditio 5, terra 5",
-    [airShard, fireShard, waterShard, earthShard, orderShard, entropyShard, balancedShard, silverwoodPlank, silverwoodPlank]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", <Thaumcraft:WandRod:2>);
+mods.thaumcraft.Research.addResearch("ALTINFUSION", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 1, 0, 8, <Thaumcraft:WandCap:2>);
+game.setLocalization("en_US", "zb.research_name.ALTINFUSION", "Alternative Infusion");
+game.setLocalization("en_US", "zb.research_page.ALTINFUSION", "<BR>Like Alchemy, some infusions can be overcome through manipulation of the primal aspects.<BR/>");
+mods.thaumcraft.Research.addPrereq("ALTINFUSION", "SIMPLE", false);
 
+//IRON CAP -10% vis discount for all (penalty) NO INFUSION
+// Thaumcraft:WandCap:0
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", orderShard * 9, "ordo 15", [orderShard, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", orderShard);
+//GOLD CAP no discount. NO INFUSION
+// Thaumcraft:WandCap:1
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", entropyShard * 9, "perditio 15", [entropyShard, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", entropyShard);
+//Copper Cap -10% discount for aer, aqua, and ignis (penalty) NO INFUSION
+//Thaumcraft:WandCap:3
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", fireShard * 9, "ignis 15", [fireShard, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", fireShard);
+//SILVER CAP 5% discount aer, aqua, ignis, and terra
+mods.thaumcraft.Arcane.addShapeless("ALTINFUSION", <Thaumcraft:WandCap:4>, "aer 8, ignis 12, ordo 12, perditio 4",
+    [<Thaumcraft:WandCap:5>, salisMundus, salisMundus, salisMundus, salisMundus]);
+mods.thaumcraft.Research.addArcanePage("ALTINFUSION", <Thaumcraft:WandCap:4>);
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", waterShard * 9, "aqua 15", [waterShard, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", waterShard);
+//THAUM CAP +10% Vis discount for every type of Vis.
+mods.thaumcraft.Arcane.addShapeless("ALTINFUSION", <Thaumcraft:WandCap:2>, "aer 12, ignis 18, ordo 18, perditio 6",
+    [<Thaumcraft:WandCap:6>, salisMundus, salisMundus, salisMundus]);
+mods.thaumcraft.Research.addArcanePage("ALTINFUSION", <Thaumcraft:WandCap:2>);
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", airShard * 9, "aer 15", [airShard, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", airShard);
+//VOID Provides 20% Vis discount.
+mods.thaumcraft.Arcane.addShapeless("ALTINFUSION", <Thaumcraft:WandCap:8>, "aer 25, ignis 25, aqua 25, terra 25, ordo 25, perditio 25",
+    [<Thaumcraft:WandCap:7>, salisMundus, salisMundus, salisMundus, salisMundus]);
+mods.thaumcraft.Research.addArcanePage("ALTINFUSION", <Thaumcraft:WandCap:8>);
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", earthShard * 9, "terra 15", [earthShard, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", earthShard);
+//Ichorium Cap 30% Vis discount. NO INFUSION
+mods.thaumcraft.Arcane.addShapeless("ALTINFUSION", <Thaumcraft:WandRod:2>, "aer 10, ignis 10, aqua 10, terra 10, ordo 10, perditio 10",
+    [silverwoodPlank, airShard, fireShard, waterShard, earthShard, orderShard, entropyShard, orderShard]);
+mods.thaumcraft.Research.addArcanePage("ALTINFUSION", <Thaumcraft:WandRod:2>);
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", fireShard * 32, "ignis 5", [fireRune, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", fireShard);
+//Ichor Strapped rod
+mods.thaumcraft.Arcane.addShapeless("ALTINFUSION", rodIchor, "aer 25, ignis 25, aqua 25, terra 25, ordo 25, perditio 25",
+    [<Thaumcraft:WandRod:2>, ichorcloth, ichorcloth, ichor, salisMundus, salisMundus, <minecraft:ghast_tear>]);
+mods.thaumcraft.Research.addArcanePage("ALTINFUSION", rodIchor);
 
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", waterShard * 32, "aqua 5", [waterRune, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", waterShard);
-
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", airShard * 32, "aer 5", [airRune, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", airShard);
-
-mods.thaumcraft.Arcane.addShapeless("SIMPLE", earthShard * 32, "terra 5", [earthRune, balancedShard]);
-mods.thaumcraft.Research.addArcanePage("SIMPLE", earthShard);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", orderShard * 9, "ordo 15", [orderShard, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", orderShard*9);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", entropyShard * 9, "perditio 15", [entropyShard, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", entropyShard*9);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", fireShard * 9, "ignis 15", [fireShard, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", fireShard*9);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", waterShard * 9, "aqua 15", [waterShard, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", waterShard*9);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", airShard * 9, "aer 15", [airShard, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", airShard*9);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", earthShard * 9, "terra 15", [earthShard, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", earthShard*9);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", fireShard * 32, "ignis 5", [fireRune, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", fireShard*32);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", waterShard * 32, "aqua 5", [waterRune, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", waterShard*32);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", airShard * 32, "aer 5", [airRune, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", airShard*32);
+//
+// mods.thaumcraft.Arcane.addShapeless("SIMPLE", earthShard * 32, "terra 5", [earthRune, balancedShard]);
+// mods.thaumcraft.Research.addArcanePage("SIMPLE", earthShard*32);
 
 /**
 *  Transmuting The Dead
@@ -259,7 +316,7 @@ mods.thaumcraft.Research.addArcanePage("SIMPLE", earthShard);
 */
 
 mods.thaumcraft.Research.addResearch("MORTOMUTE", "INFINITUDE", "ordo 10, perditio 10", 0, 2, 8, witherSkull);
-game.setLocalization("en_US", "tc.research_name.MORTOMUTE", "Transmuting Necros");
+game.setLocalization("en_US", "zb.research_name.MORTOMUTE", "Transmuting Necros");
 mods.thaumcraft.Research.addPrereq("MORTOMUTE", "SIMPLE", false);
 
 mods.thaumcraft.Arcane.addShaped("MORTOMUTE", bone*6, "ordo 10", [
@@ -295,7 +352,7 @@ mods.thaumcraft.Research.addArcanePage("MORTOMUTE", <minecraft:soul_sand>);
 *  INFINITUDE Research Tree
 */
 mods.thaumcraft.Research.addResearch("ALFMUTE", "INFINITUDE", "ordo 10, perditio 10", 2, 2, 8, elementium);
-game.setLocalization("en_US", "tc.research_name.ALFMUTE", "Transmuting Alfheim");
+game.setLocalization("en_US", "zb.research_name.ALFMUTE", "Transmuting Alfheim");
 mods.thaumcraft.Research.addPrereq("ALFMUTE", "SIMPLE", false);
 
 mods.thaumcraft.Arcane.addShaped("ALFMUTE", terraSteel, "terra 25", [
@@ -310,7 +367,7 @@ mods.thaumcraft.Research.addArcanePage("ALFMUTE", terraSteel);
 */
 
 mods.thaumcraft.Research.addResearch("MUNDMUTE", "INFINITUDE", "ordo 10, perditio 10", 1, 2, 8, stone);
-game.setLocalization("en_US", "tc.research_name.MUNDMUTE", "Transmuting The Mondane");
+game.setLocalization("en_US", "zb.research_name.MUNDMUTE", "Transmuting The Mondane");
 mods.thaumcraft.Research.addPrereq("MUNDMUTE", "SIMPLE", false);
 
 mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:lava_bucket>, "ignis 5", [
@@ -344,7 +401,7 @@ mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:stone>);
 */
 
 mods.thaumcraft.Research.addResearch("ENDERMUTE", "INFINITUDE", "ordo 10, perditio 10", 1, 3, 8, endestPearl);
-game.setLocalization("en_US", "tc.research_name.ENDERMUTE", "Transmuting Ender");
+game.setLocalization("en_US", "zb.research_name.ENDERMUTE", "Transmuting Ender");
 mods.thaumcraft.Research.addPrereq("ENDERMUTE", "MORTOMUTE", false);
 mods.thaumcraft.Research.addPrereq("ENDERMUTE", "ALFMUTE", false);
 mods.thaumcraft.Research.addPrereq("ENDERMUTE", "MUNDMUTE", false);
@@ -369,7 +426,7 @@ mods.thaumcraft.Research.addInfusionPage("ENDERMUTE", endestPearl);
 */
 
 mods.thaumcraft.Research.addResearch("INFINITY", "INFINITUDE", "ordo 1000, perditio 1000", 1, 5, 8, infinityCatalyst);
-game.setLocalization("en_US", "tc.research_name.INFINITY", "Path of INFINITY");
+game.setLocalization("en_US", "zb.research_name.INFINITY", "Path of INFINITY");
 mods.thaumcraft.Research.addPrereq("INFINITY", "ENDERMUTE", false);
 
 mods.thaumcraft.Infusion.addRecipe("INFINITY",
