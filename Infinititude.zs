@@ -88,6 +88,7 @@ val knowledgeFragment   = <Thaumcraft:ItemResource:9>;
 val taintedGoo          = <Thaumcraft:ItemResource:11>;
 val salisMundus         = <Thaumcraft:ItemResource:14>;
 val ingotVoid           = <Thaumcraft:ItemResource:16>;
+val seedVoid            = <Thaumcraft:ItemResource:17>
 
 val etherealEssence     = <Thaumcraft:ItemWispEssence>;
 
@@ -414,5 +415,75 @@ mods.thaumcraft.Research.addArcanePage("INFINITY", <Botania:pool:1>);
  */
 
 mods.thaumcraft.Loot.addCommonLoot(<Thaumcraft:ItemNugget:16>, 40);
+mods.thaumcraft.Loot.addCommonLoot(nitor, 10);
+mods.thaumcraft.Loot.addCommonLoot(<Thaumcraft:ItemLootBag>, 1);
+mods.thaumcraft.Loot.addCommonLoot(<Thaumcraft:ItemLootBag:1>, 1);
+mods.thaumcraft.Loot.addCommonLoot(<Thaumcraft:ItemLootBag:2>, 1);
+
 mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemNugget:31>, 20);
-mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject:3>, 5);
+mods.thaumcraft.Loot.addUncommonLoot(nitorHyper, 10);
+mods.thaumcraft.Loot.addUncommonLoot(seedVoid, 10);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemSwordThaumium>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemAxeThaumium>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemPickThaumium>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemHoeThaumium>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemShovelThaumium>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemThaumonomicon>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusPrimal>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusPouch>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusPortableHole>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusShock>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusExcavation>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusFire>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusFrost>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:BootsTraveller>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemGoggles>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemLootBag>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemLootBag:1>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemLootBag:2>, 1);
+
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject:3>, 25);
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject:2>, 1); //Runed Tablet
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject:1>, 1); //Crimson Rites
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject>, 1);   //Eldritch Eye
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag>, 1);
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:1>, 1);
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:2>, 1);
+mods.thaumcraft.Loot.addRareLoot(ichor, 10);
+mods.thaumcraft.Loot.addRareLoot(ichorcloth, 7);
+mods.thaumcraft.Loot.addRareLoot(ichorium, 5);
+mods.thaumcraft.Loot.addRareLoot(capIchor, 3);
+mods.thaumcraft.Loot.addRareLoot(rodIchor, 2);
+
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag>, 1);
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:1>, 1);
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:2>, 1);
+
+
+mods.thaumcraft.Loot.addRareLoot(<ExtraUtilities:unstableingot:2>, 1);
+
+mods.thaumcraft.Loot.addRareLoot(<Avaritia:Endest_Pearl>,   1);
+mods.thaumcraft.Loot.addRareLoot(<Avaritia:Resource:4>,     1); //neutroniumIngot
+mods.thaumcraft.Loot.addRareLoot(<Avaritia:Resource:5>,     1); //infinityCatalyst
+mods.thaumcraft.Loot.addRareLoot(<Avaritia:Resource:6>,     1); //infinityIngot
+
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorclothHelm>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorclothHelmGem>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorclothChest>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorclothChestGem>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorclothLegs>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorclothLegsGem>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorclothBoots>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorclothBootsGem>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:focusShadowbeam>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:focusFlight>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:focusDeflect>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:focusSmelt>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorPick>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorPickGem>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorShovel>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorShovelGem>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorAxe>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorAxeGem>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorSword>, 1);
+mods.thaumcraft.Loot.addRareLoot(<ThaumicTinkerer:ichorSwordGem>, 1);
