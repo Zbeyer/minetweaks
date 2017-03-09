@@ -237,10 +237,13 @@ mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", balancedShard*2, "aer 2, ignis
     [airShard, fireShard, waterShard, earthShard, orderShard, entropyShard, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", balancedShard*2);
 
-mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid*9, "ordo 1, perditio 1",
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid*12, "ordo 1, perditio 1",
 [<minecraft:wheat_seeds>, ingotVoid]);
-mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid*9);
+mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid*12);
 
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", <minecraft:glowstone_dust>*8, "ordo 1, perditio 1",
+[<minecraft:torch>, <minecraft:torch>, <minecraft:torch>, <minecraft:torch>, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", <minecraft:glowstone_dust>*8);
 
 /**
 *  Alternative Infusion
