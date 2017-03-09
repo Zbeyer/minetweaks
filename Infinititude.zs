@@ -187,10 +187,13 @@ mods.thaumcraft.Research.setAutoUnlock("ORDERANDCHAOS", false);
 mods.thaumcraft.Research.setRound("ORDERANDCHAOS", true);
 
 mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_1");
-game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>There is no distance between us. No false veil of time or space may intervene...<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>");
+game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>There is no distance between us. No false veil of time or space may intervene...<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><LINE>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn...<LINE/>");
 
 mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_2");
 game.setLocalization("en_US", "tc.research_page.OAC_PG_2", "<BR>There are black zones of shadow close to our daily paths, and now and then some evil soul breaks a passage through. When that happens, the man who knows must strike before reckoning the consequences.<BR/><LINE>“Dan—for God’s sake! The pit of the shoggoths! Down the six thousand steps… the abomination of abominations… I never would let her take me, and then I found myself there… Iä! Shub-Niggurath…! The shape rose up from the altar, and there were 500 that howled… The Hooded Thing bleated ‘Kamog! Kamog!’—that was old Ephraim’s secret name in the coven… I was there, where she promised she wouldn’t take me… A minute before I was locked in the library, and then I was there where she had gone with my body—in the place of utter blasphemy, the unholy pit where the black realm begins and the watcher guards the gate… I saw a shoggoth—it changed shape… I can’t stand it… I won’t stand it… I’ll kill her if she ever sends me there again… I’ll kill that entity… her, him, it… I’ll kill it! I’ll kill it with my own hands!”<LINE/>");
+
+mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_3");
+game.setLocalization("en_US", "tc.research_page.OAC_PG_3", "<BR>Tenebrea = Aer 4, Ignis 1, 1 perditio<BR/><BR>Vacuos = 1 Aer, 1 perditio<BR/><BR>Alienis = 3 Aer, Ignis 1, 2 perditio<BR/><LINE>I have glipsed <LINE/>");
 
 /**
 *  Alternative Alchemy
@@ -201,7 +204,7 @@ mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDCHAOS", false);
 mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE_1");
 
 game.setLocalization("en_US", "tc.research_name.ALTALCHEMY", "Alternative Alchemy");
-game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems less complicated, now. Each aspect breaks down to the primal six. They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/voidseed.png:0:0:255:255:0.0625</IMG><LINE>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn...<LINE/><BR>Praecantatio (aer 1, ignis 1, ordo 1, perditio 1)<BR/>");
+game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems less complicated, now. Each aspect breaks down to the primal six. They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/voidseed.png:0:0:255:255:0.0625</IMG><BR>Praecantatio (aer 1, ignis 1, ordo 1, perditio 1)<BR/>");
 
 // "aer 0, ignis 0, aqua 0, terra 0, ordo 0, perditio 0"
 
