@@ -186,36 +186,29 @@ game.setLocalization("en_US", "zb.research_name.SIMPLE", "Re-imagining The Simpl
 game.setLocalization("en_US", "zb.research_page.SIMPLE", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their primal form(s). They can be  twisted, manipulated, and bent into all kinds of states. In the end, matter and energy seem quite malleable. All you need is something to warp them... void seeds should do the trick...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR><BR/>");
 mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDANARCHY", false);
 
-mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid*2, "ordo 1, perditio 1", [<minecraft:wheat_seeds>, seedVoid]);
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid*2, "ordo 1, perditio 1",
+[<minecraft:wheat_seeds>, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid*2);
 
-mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", thaumium, "aer 4, ignis 4, ordo 4, perditio 4", [iron, seedVoid]);
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", thaumium, "aer 4, ignis 4, ordo 4, perditio 4",
+    [iron, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", thaumium);
 
-mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", magicTallow, "aer 2, ignis 2, ordo 2, perditio 2", [
-    [null,                  null,         null],
-    [null,                  rottenFlesh,        null],
-    [null,                  seedVoid,       null]]);
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", magicTallow, "aer 2, ignis 2, ordo 2, perditio 2",
+    [rottenFlesh, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", magicTallow);
 
-mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", nitor, "aer 3, ignis 9, ordo 3", [
-    [null,                  null,                 null],
-    [null,                  <minecraft:glowStoneDust>,  null],
-    [null,                  null,               null]]);
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", nitor, "aer 3, ignis 9, ordo 3",
+    [<minecraft:glowStoneDust>, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", nitor);
 
-mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", alumentum, "ignis 6, ordo 3, perditio 3", [
-    [null,                  orderShard,                 null],
-    [null,                  <minecraft:coal:*>,         null],
-    [null,                  entropyShard,               null]]);
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", alumentum, "ignis 6, ordo 3, perditio 3",
+    [<minecraft:coal:*>, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", alumentum);
 
-mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", nitorHyper, "aer 4, ignis 8, ordo 4, perditio 4", [
-    [null,                  fireShard,      null],
-    [null,                  nitor,          null],
-    [null,                  fireShard,      null]]);
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", nitorHyper, "aer 4, ignis 8, ordo 4, perditio 4",
+    [nitor, fireShard, airShard, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", nitorHyper);
-
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", balancedShard*2, "aer 2, ignis 2, ordo 2, perditio 2",
     [airShard, fireShard, waterShard, earthShard, orderShard, entropyShard, redStone]);
@@ -275,7 +268,7 @@ game.setLocalization("en_US", "zb.research_name.MUNDMUTE", "Transmuting The Mond
 mods.thaumcraft.Research.addPrereq("MUNDMUTE", "ALTINFUSION", false);
 
 mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:lava_bucket>, "ignis 5", [
-    [null,      fireShard,          null],
+    [null,      seedVoid,          null],
     [null,      fireShard,          null],
     [null,      <minecraft:bucket>, null]]);
 mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:lava_bucket>);
@@ -297,7 +290,6 @@ mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:stone>*3, "ignis 5", [
     [<minecraft:cobblestone>,      <minecraft:cobblestone>,                <minecraft:cobblestone>],
     [null,                          fireShard,                              null]]);
 mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:stone>);
-
 
 /**
 *  Transmuting The Dead
