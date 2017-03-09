@@ -185,10 +185,8 @@ mods.thaumcraft.Research.setAutoUnlock("ORDERANDANARCHY", false);
 mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
 
 mods.thaumcraft.Research.addPage("ORDERANDANARCHY", "tc.research_page.MUTEVEIL");
-game.setLocalization("en_US", "tc.research_name.ORDERANDANARCHY", "Order & Anarchy");
-game.setLocalization("en_US", "tc.research_page.MUTEVEIL", "<BR>There is no distance between us. No false veil of time or space may intervene...<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/><IMG>thaumcraft:textures/items/voidseed.png:0:0:255:255:0.0625</IMG>");
-
-
+game.setLocalization("en_US", "tc.research_name.ORDERANDANARCHY", "Order & Chaos");
+game.setLocalization("en_US", "tc.research_page.MUTEVEIL", "<BR>There is no distance between us. No false veil of time or space may intervene...<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>");
 
 
 /**
@@ -201,7 +199,7 @@ mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDANARCHY", false);
 mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE_1");
 
 game.setLocalization("en_US", "tc.research_name.ALTALCHEMY", "Alternative Alchemy");
-game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems less complicated, now. Each aspect breaks down to the primal six. They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn...<BR/>");
+game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems less complicated, now. Each aspect breaks down to the primal six. They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/voidseed.png:0:0:255:255:0.0625</IMG><LINE>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn...<LINE/><BR>Praecantatio (aer 1, ignis 1, ordo 1, perditio 1)<BR/>");
 
 // "aer 0, ignis 0, aqua 0, terra 0, ordo 0, perditio 0"
 
