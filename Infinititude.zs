@@ -211,7 +211,7 @@ mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", nitorHyper, "aer 4, ignis 8, o
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", nitorHyper);
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", balancedShard*2, "aer 2, ignis 2, ordo 2, perditio 2",
-    [airShard, fireShard, waterShard, earthShard, orderShard, entropyShard, redStone]);
+    [airShard, fireShard, waterShard, earthShard, orderShard, entropyShard, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", balancedShard*2);
 
 /**
