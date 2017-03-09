@@ -173,12 +173,16 @@ val bonemeal        = <minecraft:dye:15>;
 mods.thaumcraft.Research.addTab("INFINITUDE", "thaumcraft", "textures/items/brain.png");
 game.setLocalization("en_US", "tc.research_category.INFINITUDE", "Infinitude");
 mods.thaumcraft.Research.addResearch("ORDERANDANARCHY", "INFINITUDE", "", 1, -1, 8, quicksilver);
-game.setLocalization("en_US", "tc.research_name.ORDERANDANARCHY", "Order & Anarchy");
-// game.setLocalization("en_US", "tc.research_page.ORDERANDANARCHY", "<BR>The veil seems thinner.<BR/>");
 mods.thaumcraft.Research.addSibling("VOIDMETAL", "ORDERANDANARCHY");
-mods.thaumcraft.Research.setVirtual("ORDERANDANARCHY", true);
-mods.thaumcraft.Research.setAutoUnlock("ORDERANDANARCHY", true);
+// mods.thaumcraft.Research.setVirtual("ORDERANDANARCHY", true);
+mods.thaumcraft.Research.setAutoUnlock("ORDERANDANARCHY", false);
 mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
+
+mods.thaumcraft.Research.addPage("ORDERANDANARCHY", "tc.research_page.MUTEVEIL");
+game.setLocalization("en_US", "tc.research_name.ORDERANDANARCHY", "Order & Anarchy");
+game.setLocalization("en_US", "tc.research_page.MUTEVEIL", "<BR>The veil seems thinner.<BR/>");
+
+
 
 
 /**
@@ -187,9 +191,13 @@ mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
 */
 
 mods.thaumcraft.Research.addResearch("ALTALCHEMY", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 0, 8, nitor);
-game.setLocalization("en_US", "tc.research_name.SIMPLE", "Re-imagining The Simple");
-game.setLocalization("en_US", "tc.research_page.SIMPLE", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their primal form(s). They can be  twisted, manipulated, and bent into all kinds of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR><BR/>");
 mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDANARCHY", false);
+mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE_1");
+
+game.setLocalization("en_US", "tc.research_name.ALTALCHEMY", "Alternative Alchemy");
+game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their to their primal form(s). They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn...<BR/>");
+
+
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid, "ordo 1, perditio 1",
 [<minecraft:wheat_seeds>, entropyShard, orderShard]);
