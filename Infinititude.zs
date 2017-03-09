@@ -87,8 +87,10 @@ val amber               = <Thaumcraft:ItemResource:6>;
 val knowledgeFragment   = <Thaumcraft:ItemResource:9>;
 val taintedGoo          = <Thaumcraft:ItemResource:11>;
 val salisMundus         = <Thaumcraft:ItemResource:14>;
+
 val ingotVoid           = <Thaumcraft:ItemResource:16>;
 val seedVoid            = <Thaumcraft:ItemResource:17>;
+val nuggetVoid          = <Thaumcraft:ItemNugget:7>;
 
 val etherealEssence     = <Thaumcraft:ItemWispEssence>;
 
@@ -162,6 +164,10 @@ val lightBlueDye    = <minecraft:dye:12>;
 val magentaDye      = <minecraft:dye:13>;
 val orangeDye       = <minecraft:dye:14>;
 val bonemeal        = <minecraft:dye:15>;
+
+
+recipes.addShapeless(seedVoid, [nuggetVoid]);
+recipes.addShapeless(nuggetVoid, [seedVoid]);
 /**
 *  INFINITUDE Research Tree
 *  For All things related to the subject of Infinitude Corpos
@@ -180,7 +186,7 @@ mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
 
 mods.thaumcraft.Research.addPage("ORDERANDANARCHY", "tc.research_page.MUTEVEIL");
 game.setLocalization("en_US", "tc.research_name.ORDERANDANARCHY", "Order & Anarchy");
-game.setLocalization("en_US", "tc.research_page.MUTEVEIL", "<BR>The veil seems thinner.<BR/>");
+game.setLocalization("en_US", "tc.research_page.MUTEVEIL", "<BR>There is no distance between us. No false veil of time or space may intervene...<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/><IMG>thaumcraft:textures/items/voidseed.png:0:0:255:255:0.0625</IMG>");
 
 
 
@@ -195,7 +201,7 @@ mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDANARCHY", false);
 mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE_1");
 
 game.setLocalization("en_US", "tc.research_name.ALTALCHEMY", "Alternative Alchemy");
-game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their to their primal form(s). They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn...<BR/>");
+game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems less complicated, now. Each aspect breaks down to the primal six. They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn...<BR/>");
 
 
 
@@ -231,14 +237,21 @@ mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", balancedShard*2, "aer 2, ignis
     [airShard, fireShard, waterShard, earthShard, orderShard, entropyShard, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", balancedShard*2);
 
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid*9, "ordo 1, perditio 1",
+[<minecraft:wheat_seeds>, ingotVoid]);
+mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid*9);
+
+
 /**
 *  Alternative Infusion
 *  INFINITUDE Research Tree
 */
 
 mods.thaumcraft.Research.addResearch("ALTINFUSION", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 0, 0, 8, <Thaumcraft:WandCap:2>);
+mods.thaumcraft.Research.addPage("ALTINFUSION", "tc.research_page.ALTINFUSION_PAGE_1");
+
 game.setLocalization("en_US", "tc.research_name.ALTINFUSION", "Alternative Infusion");
-game.setLocalization("en_US", "tc.research_page.ALTINFUSION", "<BR>Like Alchemy, some infusions can be overcome through manipulation of the primal aspects.<BR/>");
+game.setLocalization("en_US", "tc.research_page.ALTINFUSION_PAGE_1", "<BR>Like Alchemy, some infusions can be overcome through manipulation of the primal aspects.<BR/>");
 mods.thaumcraft.Research.addPrereq("ALTINFUSION", "ALTALCHEMY", false);
 
 //IRON CAP -10% vis discount for all (penalty) NO INFUSION
@@ -252,7 +265,7 @@ mods.thaumcraft.Research.addPrereq("ALTINFUSION", "ALTALCHEMY", false);
 
 //SILVER CAP 5% discount aer, aqua, ignis, and terra
 mods.thaumcraft.Arcane.addShapeless("ALTINFUSION", <Thaumcraft:WandCap:4>, "aer 8, ignis 12, ordo 12, perditio 4",
-    [<Thaumcraft:WandCap:5>, salisMundus, salisMundus, salisMundus, salisMundus]);
+    [<Thaumcraft:WandCap:5>, salisMundus]);
 mods.thaumcraft.Research.addArcanePage("ALTINFUSION", <Thaumcraft:WandCap:4>);
 
 //THAUM CAP +10% Vis discount for every type of Vis.
