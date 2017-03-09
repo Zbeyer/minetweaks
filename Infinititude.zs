@@ -203,18 +203,25 @@ mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE
 game.setLocalization("en_US", "tc.research_name.ALTALCHEMY", "Alternative Alchemy");
 game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems less complicated, now. Each aspect breaks down to the primal six. They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn...<BR/>");
 
+// "aer 0, ignis 0, aqua 0, terra 0, ordo 0, perditio 0"
 
-
+//Tenebrea = Aer 4, Ignis 1, 1 perditio
+//Vacuos = 1 Aer, 1 perditio
+//Alienis = 3 Aer, Ignis 1, 2 perditio
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid, "aer 30, ignis 10, perditio 20",
 [<minecraft:wheat_seeds>, entropyShard, orderShard]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid);
 
+//Praecantatio = aer 1, ignis 1, ordo 1, perditio 1"
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", thaumium, "aer 4, ignis 4, ordo 4, perditio 4",
     [iron, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", thaumium);
 
-mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", ingotVoid, "aer 4, ignis 4, ordo 4, perditio 4",
-    [thaumium, seedVoid]);
+//Metallium = terra 2, ordo 1
+//Iron ingot has 4 Metallium as its only aspect
+//Void Ingot recipe is the most true to form, requires no additional aspects.
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", ingotVoid, "",
+    [iron, iron, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", ingotVoid);
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", magicTallow, "aer 2, ignis 2, ordo 2, perditio 2",
