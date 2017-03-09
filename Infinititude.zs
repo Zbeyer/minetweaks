@@ -179,7 +179,6 @@ game.setLocalization("en_US", "tc.research_category.INFINITUDE", "Infinitude");
  * Order & Chaos
  * INFINITUDE Research Tree
  */
-
 mods.thaumcraft.Research.addResearch("ORDERANDCHAOS", "INFINITUDE", "", 1, -1, 8, quicksilver);
 game.setLocalization("en_US", "tc.research_name.ORDERANDCHAOS", "Order & Chaos");
 
@@ -197,7 +196,6 @@ game.setLocalization("en_US", "tc.research_page.OAC_PG_2", "<BR>There are black 
 *  Alternative Alchemy
 *  INFINITUDE Research Tree
 */
-
 mods.thaumcraft.Research.addResearch("ALTALCHEMY", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 0, 8, nitor);
 mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDCHAOS", false);
 mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE_1");
@@ -258,7 +256,6 @@ mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", <minecraft:glowstone_dust>*
 *  Alternative Infusion
 *  INFINITUDE Research Tree
 */
-
 mods.thaumcraft.Research.addResearch("ALTINFUSION", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 0, 0, 8, <Thaumcraft:WandCap:2>);
 mods.thaumcraft.Research.addPage("ALTINFUSION", "tc.research_page.ALTINFUSION_PAGE_1");
 
@@ -337,7 +334,6 @@ mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:stone>);
 *  Transmuting The Dead
 *  INFINITUDE Research Tree
 */
-
 mods.thaumcraft.Research.addResearch("MORTOMUTE", "INFINITUDE", "ordo 10, perditio 10", 0, 2, 8, witherSkull);
 game.setLocalization("en_US", "tc.research_name.MORTOMUTE", "Transmuting Necros");
 mods.thaumcraft.Research.addPrereq("MORTOMUTE", "MUNDMUTE", false);
@@ -389,7 +385,6 @@ mods.thaumcraft.Research.addArcanePage("ALFMUTE", terraSteel);
 *  Transmuting Transmuting The Ender
 *  INFINITUDE Research Tree
 */
-
 mods.thaumcraft.Research.addResearch("ENDERMUTE", "INFINITUDE", "ordo 10, perditio 10", 1, 2, 8, endestPearl);
 game.setLocalization("en_US", "tc.research_name.ENDERMUTE", "Transmuting Ender");
 mods.thaumcraft.Research.addPrereq("ENDERMUTE", "MORTOMUTE", false);
@@ -414,7 +409,6 @@ mods.thaumcraft.Research.addInfusionPage("ENDERMUTE", endestPearl);
 *  PATH OF INFINITY
 *  INFINITUDE Research Tree
 */
-
 mods.thaumcraft.Research.addResearch("INFINITY", "INFINITUDE", "ordo 1000, perditio 1000", 1, 5, 8, infinityCatalyst);
 game.setLocalization("en_US", "tc.research_name.INFINITY", "Path of INFINITY");
 mods.thaumcraft.Research.addPrereq("INFINITY", "ENDERMUTE", false);
@@ -447,7 +441,6 @@ mods.thaumcraft.Research.addArcanePage("INFINITY", <Botania:pool:1>);
 /**
  *  LOOT BAG
  */
-
 mods.thaumcraft.Loot.addCommonLoot(<Thaumcraft:ItemNugget:16>, 40);
 mods.thaumcraft.Loot.addCommonLoot(nitor, 10);
 mods.thaumcraft.Loot.addCommonLoot(<Thaumcraft:ItemLootBag>, 1);
