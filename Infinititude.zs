@@ -88,7 +88,7 @@ val knowledgeFragment   = <Thaumcraft:ItemResource:9>;
 val taintedGoo          = <Thaumcraft:ItemResource:11>;
 val salisMundus         = <Thaumcraft:ItemResource:14>;
 val ingotVoid           = <Thaumcraft:ItemResource:16>;
-val seedVoid            = <Thaumcraft:ItemResource:17>
+val seedVoid            = <Thaumcraft:ItemResource:17>;
 
 val etherealEssence     = <Thaumcraft:ItemWispEssence>;
 
@@ -167,14 +167,19 @@ val bonemeal        = <minecraft:dye:15>;
 *  For All things related to the subject of Infinitude Corpos
 */
 
-mods.thaumcraft.Research.addTab("INFINITUDE", "thaumcraft", "textures/items/nodes.png");
-game.setLocalization("en_US", "zb.research_category.INFINITUDE", "Infinitude");
 
+
+// VOIDMETAL
+mods.thaumcraft.Research.addTab("INFINITUDE", "thaumcraft", "textures/items/brain.png");
+game.setLocalization("en_US", "tc.research_category.INFINITUDE", "Infinitude");
 mods.thaumcraft.Research.addResearch("ORDERANDANARCHY", "INFINITUDE", "", 1, -1, 8, quicksilver);
-game.setLocalization("en_US", "zb.research_name.ORDERANDANARCHY", "Order & Anarchy");
-game.setLocalization("en_US", "zb.research_page.ORDERANDANARCHY", "<BR>The veil seems thinner.<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/>");
+game.setLocalization("en_US", "tc.research_name.ORDERANDANARCHY", "Order & Anarchy");
+// game.setLocalization("en_US", "tc.research_page.ORDERANDANARCHY", "<BR>The veil seems thinner.<BR/>");
+mods.thaumcraft.Research.addSibling("VOIDMETAL", "ORDERANDANARCHY");
+mods.thaumcraft.Research.setVirtual("ORDERANDANARCHY", true);
 mods.thaumcraft.Research.setAutoUnlock("ORDERANDANARCHY", true);
 mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
+
 
 /**
 *  Re-imagining The Simple
@@ -182,8 +187,8 @@ mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
 */
 
 mods.thaumcraft.Research.addResearch("ALTALCHEMY", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 0, 8, nitor);
-game.setLocalization("en_US", "zb.research_name.SIMPLE", "Re-imagining The Simple");
-game.setLocalization("en_US", "zb.research_page.SIMPLE", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their primal form(s). They can be  twisted, manipulated, and bent into all kinds of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR><BR/>");
+game.setLocalization("en_US", "tc.research_name.SIMPLE", "Re-imagining The Simple");
+game.setLocalization("en_US", "tc.research_page.SIMPLE", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their primal form(s). They can be  twisted, manipulated, and bent into all kinds of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR><BR/>");
 mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDANARCHY", false);
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid, "ordo 1, perditio 1",
@@ -203,7 +208,7 @@ mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", magicTallow, "aer 2, ignis 2, 
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", magicTallow);
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", nitor, "aer 3, ignis 9, ordo 3",
-    [<minecraft:glowStoneDust>, seedVoid]);
+    [<minecraft:glowstone_dust>, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", nitor);
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", alumentum, "ignis 6, ordo 3, perditio 3",
@@ -224,8 +229,8 @@ mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", balancedShard*2);
 */
 
 mods.thaumcraft.Research.addResearch("ALTINFUSION", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 0, 0, 8, <Thaumcraft:WandCap:2>);
-game.setLocalization("en_US", "zb.research_name.ALTINFUSION", "Alternative Infusion");
-game.setLocalization("en_US", "zb.research_page.ALTINFUSION", "<BR>Like Alchemy, some infusions can be overcome through manipulation of the primal aspects.<BR/>");
+game.setLocalization("en_US", "tc.research_name.ALTINFUSION", "Alternative Infusion");
+game.setLocalization("en_US", "tc.research_page.ALTINFUSION", "<BR>Like Alchemy, some infusions can be overcome through manipulation of the primal aspects.<BR/>");
 mods.thaumcraft.Research.addPrereq("ALTINFUSION", "ALTALCHEMY", false);
 
 //IRON CAP -10% vis discount for all (penalty) NO INFUSION
@@ -268,7 +273,7 @@ mods.thaumcraft.Research.addArcanePage("ALTINFUSION", rodIchor);
 */
 
 mods.thaumcraft.Research.addResearch("MUNDMUTE", "INFINITUDE", "ordo 10, perditio 10", 1, 1, 8, stone);
-game.setLocalization("en_US", "zb.research_name.MUNDMUTE", "Transmuting The Mondane");
+game.setLocalization("en_US", "tc.research_name.MUNDMUTE", "Transmuting The Mondane");
 mods.thaumcraft.Research.addPrereq("MUNDMUTE", "ALTINFUSION", false);
 
 mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:lava_bucket>, "ignis 5", [
@@ -301,7 +306,7 @@ mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:stone>);
 */
 
 mods.thaumcraft.Research.addResearch("MORTOMUTE", "INFINITUDE", "ordo 10, perditio 10", 0, 2, 8, witherSkull);
-game.setLocalization("en_US", "zb.research_name.MORTOMUTE", "Transmuting Necros");
+game.setLocalization("en_US", "tc.research_name.MORTOMUTE", "Transmuting Necros");
 mods.thaumcraft.Research.addPrereq("MORTOMUTE", "MUNDMUTE", false);
 
 mods.thaumcraft.Arcane.addShaped("MORTOMUTE", bone*6, "ordo 10", [
@@ -337,7 +342,7 @@ mods.thaumcraft.Research.addArcanePage("MORTOMUTE", <minecraft:soul_sand>);
 *  INFINITUDE Research Tree
 */
 mods.thaumcraft.Research.addResearch("ALFMUTE", "INFINITUDE", "ordo 10, perditio 10", 2, 1, 8, elementium);
-game.setLocalization("en_US", "zb.research_name.ALFMUTE", "Transmuting Alfheim");
+game.setLocalization("en_US", "tc.research_name.ALFMUTE", "Transmuting Alfheim");
 mods.thaumcraft.Research.addPrereq("ALFMUTE", "MUNDMUTE", false);
 
 mods.thaumcraft.Arcane.addShaped("ALFMUTE", terraSteel, "terra 25", [
@@ -353,7 +358,7 @@ mods.thaumcraft.Research.addArcanePage("ALFMUTE", terraSteel);
 */
 
 mods.thaumcraft.Research.addResearch("ENDERMUTE", "INFINITUDE", "ordo 10, perditio 10", 1, 2, 8, endestPearl);
-game.setLocalization("en_US", "zb.research_name.ENDERMUTE", "Transmuting Ender");
+game.setLocalization("en_US", "tc.research_name.ENDERMUTE", "Transmuting Ender");
 mods.thaumcraft.Research.addPrereq("ENDERMUTE", "MORTOMUTE", false);
 mods.thaumcraft.Research.addPrereq("ENDERMUTE", "ALFMUTE", false);
 mods.thaumcraft.Research.addPrereq("ENDERMUTE", "MUNDMUTE", false);
@@ -378,7 +383,7 @@ mods.thaumcraft.Research.addInfusionPage("ENDERMUTE", endestPearl);
 */
 
 mods.thaumcraft.Research.addResearch("INFINITY", "INFINITUDE", "ordo 1000, perditio 1000", 1, 5, 8, infinityCatalyst);
-game.setLocalization("en_US", "zb.research_name.INFINITY", "Path of INFINITY");
+game.setLocalization("en_US", "tc.research_name.INFINITY", "Path of INFINITY");
 mods.thaumcraft.Research.addPrereq("INFINITY", "ENDERMUTE", false);
 
 mods.thaumcraft.Infusion.addRecipe("INFINITY",
