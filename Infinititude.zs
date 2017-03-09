@@ -186,13 +186,17 @@ game.setLocalization("en_US", "zb.research_name.SIMPLE", "Re-imagining The Simpl
 game.setLocalization("en_US", "zb.research_page.SIMPLE", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their primal form(s). They can be  twisted, manipulated, and bent into all kinds of states. In the end, matter and energy seem quite malleable. All you need is something to warp them... void seeds should do the trick...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR><BR/>");
 mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDANARCHY", false);
 
-mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid*2, "ordo 1, perditio 1",
-[<minecraft:wheat_seeds>, seedVoid]);
-mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid*2);
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid, "ordo 1, perditio 1",
+[<minecraft:wheat_seeds>, entropyShard, orderShard]);
+mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid);
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", thaumium, "aer 4, ignis 4, ordo 4, perditio 4",
     [iron, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", thaumium);
+
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", ingotVoid, "aer 4, ignis 4, ordo 4, perditio 4",
+    [thaumium, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", ingotVoid);
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", magicTallow, "aer 2, ignis 2, ordo 2, perditio 2",
     [rottenFlesh, seedVoid]);
