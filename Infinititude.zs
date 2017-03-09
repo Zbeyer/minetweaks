@@ -172,30 +172,34 @@ recipes.addShapeless(nuggetVoid, [seedVoid]);
 *  INFINITUDE Research Tree
 *  For All things related to the subject of Infinitude Corpos
 */
-
-
-
-// VOIDMETAL
 mods.thaumcraft.Research.addTab("INFINITUDE", "thaumcraft", "textures/items/brain.png");
 game.setLocalization("en_US", "tc.research_category.INFINITUDE", "Infinitude");
-mods.thaumcraft.Research.addResearch("ORDERANDANARCHY", "INFINITUDE", "", 1, -1, 8, quicksilver);
-mods.thaumcraft.Research.addSibling("VOIDMETAL", "ORDERANDANARCHY");
-// mods.thaumcraft.Research.setVirtual("ORDERANDANARCHY", true);
-mods.thaumcraft.Research.setAutoUnlock("ORDERANDANARCHY", false);
-mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
-
-mods.thaumcraft.Research.addPage("ORDERANDANARCHY", "tc.research_page.MUTEVEIL");
-game.setLocalization("en_US", "tc.research_name.ORDERANDANARCHY", "Order & Chaos");
-game.setLocalization("en_US", "tc.research_page.MUTEVEIL", "<BR>There is no distance between us. No false veil of time or space may intervene...<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>");
-
 
 /**
-*  Re-imagining The Simple
+ * Order & Chaos
+ * INFINITUDE Research Tree
+ */
+
+mods.thaumcraft.Research.addResearch("ORDERANDCHAOS", "INFINITUDE", "", 1, -1, 8, quicksilver);
+game.setLocalization("en_US", "tc.research_name.ORDERANDCHAOS", "Order & Chaos");
+
+mods.thaumcraft.Research.addSibling("VOIDMETAL", "ORDERANDCHAOS");
+mods.thaumcraft.Research.setAutoUnlock("ORDERANDCHAOS", false);
+mods.thaumcraft.Research.setRound("ORDERANDCHAOS", true);
+
+mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_1");
+game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>There is no distance between us. No false veil of time or space may intervene...<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades...<LINE/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG>");
+
+mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_2");
+game.setLocalization("en_US", "tc.research_page.OAC_PG_2", "<BR>There are black zones of shadow close to our daily paths, and now and then some evil soul breaks a passage through. When that happens, the man who knows must strike before reckoning the consequences.<BR/><LINE>“Dan—for God’s sake! The pit of the shoggoths! Down the six thousand steps… the abomination of abominations… I never would let her take me, and then I found myself there… Iä! Shub-Niggurath…! The shape rose up from the altar, and there were 500 that howled… The Hooded Thing bleated ‘Kamog! Kamog!’—that was old Ephraim’s secret name in the coven… I was there, where she promised she wouldn’t take me… A minute before I was locked in the library, and then I was there where she had gone with my body—in the place of utter blasphemy, the unholy pit where the black realm begins and the watcher guards the gate… I saw a shoggoth—it changed shape… I can’t stand it… I won’t stand it… I’ll kill her if she ever sends me there again… I’ll kill that entity… her, him, it… I’ll kill it! I’ll kill it with my own hands!”<LINE/>");
+
+/**
+*  Alternative Alchemy
 *  INFINITUDE Research Tree
 */
 
 mods.thaumcraft.Research.addResearch("ALTALCHEMY", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 0, 8, nitor);
-mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDANARCHY", false);
+mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDCHAOS", false);
 mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE_1");
 
 game.setLocalization("en_US", "tc.research_name.ALTALCHEMY", "Alternative Alchemy");
