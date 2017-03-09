@@ -183,25 +183,25 @@ mods.thaumcraft.Research.setRound("ORDERANDANARCHY", true);
 
 mods.thaumcraft.Research.addResearch("ALTALCHEMY", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 0, 8, nitor);
 game.setLocalization("en_US", "zb.research_name.SIMPLE", "Re-imagining The Simple");
-game.setLocalization("en_US", "zb.research_page.SIMPLE", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their primal form(s). They can be  twisted, manipulated, and bent into all kinds of states. In the end, matter and energy seem quite malleable.<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR><BR/>");
+game.setLocalization("en_US", "zb.research_page.SIMPLE", "<BR>Alchemy seems far less complicated, now. Each aspect breaks down their primal form(s). They can be  twisted, manipulated, and bent into all kinds of states. In the end, matter and energy seem quite malleable. All you need is something to warp them... void seeds should do the trick...<BR/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><BR><BR/>");
 mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDANARCHY", false);
 
-mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", thaumium, "aer 4, ignis 4, ordo 4, perditio 4", [
-    [null,                  orderShard,         null],
-    [null,                  iron,               null],
-    [null,                  entropyShard,       null]]);
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid*2, "ordo 1, perditio 1", [<minecraft:wheat_seeds>, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid*2);
+
+mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", thaumium, "aer 4, ignis 4, ordo 4, perditio 4", [iron, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", thaumium);
 
 mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", magicTallow, "aer 2, ignis 2, ordo 2, perditio 2", [
-    [null,                  orderShard,         null],
+    [null,                  null,         null],
     [null,                  rottenFlesh,        null],
-    [null,                  entropyShard,       null]]);
+    [null,                  seedVoid,       null]]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", magicTallow);
 
 mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", nitor, "aer 3, ignis 9, ordo 3", [
-    [null,                  orderShard,                 null],
+    [null,                  null,                 null],
     [null,                  <minecraft:glowStoneDust>,  null],
-    [null,                  entropyShard,               null]]);
+    [null,                  null,               null]]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", nitor);
 
 mods.thaumcraft.Arcane.addShaped("ALTALCHEMY", alumentum, "ignis 6, ordo 3, perditio 3", [
