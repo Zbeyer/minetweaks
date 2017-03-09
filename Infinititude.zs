@@ -205,7 +205,7 @@ game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy
 
 
 
-mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid, "ordo 1, perditio 1",
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", seedVoid, "aer 30, ignis 10, perditio 20",
 [<minecraft:wheat_seeds>, entropyShard, orderShard]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", seedVoid);
 
