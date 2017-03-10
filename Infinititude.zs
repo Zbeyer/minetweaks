@@ -605,7 +605,7 @@ mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusFire>, 1);
 mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:FocusFrost>, 1);
 mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:BootsTraveller>, 1);
 mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemGoggles>, 1);
-mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemLootBag>, 1);
+mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemLootBag>, 10);
 mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemLootBag:1>, 1);
 mods.thaumcraft.Loot.addUncommonLoot(<Thaumcraft:ItemLootBag:2>, 1);
 
@@ -613,19 +613,14 @@ mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject:3>, 25);
 mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject:2>, 1); //Runed Tablet
 mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject:1>, 1); //Crimson Rites
 mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemEldritchObject>, 1);   //Eldritch Eye
-mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag>, 1);
-mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:1>, 1);
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag>, 100);
+mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:1>, 10);
 mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:2>, 1);
 mods.thaumcraft.Loot.addRareLoot(ichor, 10);
 mods.thaumcraft.Loot.addRareLoot(ichorcloth, 7);
 mods.thaumcraft.Loot.addRareLoot(ichorium, 5);
 mods.thaumcraft.Loot.addRareLoot(capIchor, 3);
 mods.thaumcraft.Loot.addRareLoot(rodIchor, 2);
-
-mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag>, 1);
-mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:1>, 1);
-mods.thaumcraft.Loot.addRareLoot(<Thaumcraft:ItemLootBag:2>, 1);
-
 
 mods.thaumcraft.Loot.addRareLoot(<ExtraUtilities:unstableingot:2>, 1);
 
