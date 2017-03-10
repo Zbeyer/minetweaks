@@ -168,6 +168,9 @@ val bonemeal        = <minecraft:dye:15>;
 
 recipes.addShapeless(seedVoid, [nuggetVoid]);
 recipes.addShapeless(nuggetVoid, [seedVoid]);
+
+
+
 /**
 *  INFINITUDE Research Tree
 *  For All things related to the subject of Infinitude Corpos
@@ -193,7 +196,7 @@ mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_2");
 game.setLocalization("en_US", "tc.research_page.OAC_PG_2", "<BR>The pit of the shoggoths! Down the six thousand steps-abomination of abominations! Never would let her take me. Then I found myself there! Iä! Shub-Niggurath.! Shape rose up from the altar, & 500 howled. Hooded Thing bleated 'Kamog! Kamog!', (old Ephraim's secret name). I was there, where she promised she wouldn't take me. A minute before I was locked in the library, and then I was there where she had gone with my body, in the place of utter blasphemy, the unholy pit where the black realm begins and the watcher guards the gate. I saw a shoggoth, it changed shape. I can't stand it. I won't stand it. I'll kill her if she ever sends me there again. I'll kill that entity. her, him, it. I'll kill it! I'll kill it with my own hands!<BR/>");
 
 mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_3");
-game.setLocalization("en_US", "tc.research_page.OAC_PG_3", "<BR>Tenebrea = Aer 4, Ignis 1, 1 perditio<BR/><BR>Vacuos = 1 Aer, 1 perditio<BR/><BR>Alienis = 3 Aer, Ignis 1, 2 perditio<BR/><LINE>There are black zones of shadow close to our daily paths, and now and then some evil soul breaks a passage through. When that happens, the man who knows must strike before reckoning the consequences.<LINE/>");
+game.setLocalization("en_US", "tc.research_page.OAC_PG_3", "<LINE>There are black zones of shadow close to our daily paths, and now and then some evil soul breaks a passage through. When that happens, the man who knows must strike before reckoning the consequences.<LINE/>");
 
 /**
 *  Alternative Alchemy
@@ -204,7 +207,9 @@ mods.thaumcraft.Research.addPrereq("ALTALCHEMY", "ORDERANDCHAOS", false);
 mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE_1");
 
 game.setLocalization("en_US", "tc.research_name.ALTALCHEMY", "Alternative Alchemy");
-game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems less complicated, now.\nEach aspect breaks down to the primal six. They can be twisted, manipulated, and bent into all sorts of states. In the end, matter and energy seem quite malleable. All you need is some kind of catalyst to disolve the elements.<BR/><IMG>thaumcraft:textures/items/voidseed.png:0:0:255:255:0.0625</IMG><BR>Praecantatio\nAer 1, Egnis 1, Ordo 1, Perditio 1<BR/>");
+game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_PAGE_1", "<BR>Alchemy seems less complicated, now.\nAspect break down into the primal six. They can be twisted manipulated and bent many states. In the end matter and energy are quite malleable. All you need is something to breach the veil...<BR/><IMG>thaumcraft:textures/items/voidseed.png:0:0:255:255:0.0625</IMG><BR>8xTenebrea = Aer:16 Ignis:8 Perditio:8<BR/><BR>8xVacuos = Aer:8 Perditio:8<BR/><BR>2xAlienis = Aer:6 Ignis:2 Perditio:4<BR/>");
+
+// <BR>Praecantatio\nAer 1, Egnis 1, Ordo 1, Perditio 1<BR/>
 
 // "aer 0, ignis 0, aqua 0, terra 0, ordo 0, perditio 0"
 
@@ -220,12 +225,6 @@ mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", thaumium, "aer 4, ignis 4, ord
     [iron, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", thaumium);
 
-//Metallium = terra 2, ordo 1
-//Iron ingot has 4 Metallium as its only aspect
-//Void Ingot recipe is the most true to form, requires no additional aspects.
-mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", ingotVoid, "",
-    [iron, iron, seedVoid]);
-mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", ingotVoid);
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", magicTallow, "aer 2, ignis 2, ordo 2, perditio 2",
     [rottenFlesh, seedVoid]);
@@ -238,6 +237,17 @@ mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", nitor);
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", alumentum, "ignis 6, ordo 3, perditio 3",
     [<minecraft:coal:*>, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", alumentum);
+
+//Metallium = terra 2, ordo 1
+//Iron ingot has 4 Metallium as its only aspect
+//Void Ingot recipe is the most true to form, requires no additional aspects.
+mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_VOIDINGOT");
+game.setLocalization("en_US", "tc.research_page.ALTALCHEMY_VOIDINGOT", "<BR>The ingot just needed Metallium... Iron has Metallium... yes of course.... a couple iron is all you need, isn't it?<BR/>");
+
+mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", ingotVoid, "",
+    [iron, iron, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("ALTALCHEMY", ingotVoid);
+
 
 mods.thaumcraft.Arcane.addShapeless("ALTALCHEMY", nitorHyper, "aer 4, ignis 8, ordo 4, perditio 4",
     [nitor, fireShard, airShard, seedVoid]);
