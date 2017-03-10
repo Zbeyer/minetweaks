@@ -206,7 +206,11 @@ game.setLocalization("en_US", "tc.research_name.ORDERANDCHAOS", "Order & Chaos")
 
 mods.thaumcraft.Research.setAutoUnlock("ORDERANDCHAOS", true);
 mods.thaumcraft.Research.setRound("ORDERANDCHAOS", true);
+mods.thaumcraft.Research.addPrereq("ORDERANDCHAOS", "VOIDMETAL", false);
 mods.thaumcraft.Research.addSibling("VOIDMETAL", "ORDERANDCHAOS");
+
+mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_0");
+game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>Forbidden lore allowed you to glimpse beyond the veil. Your thoughts are frayed among cosmic imaginings. There is a strange separation between natural and eldridge lore. Some peculiar order arises amidst the precarious ruins you glimpsed in dreams of outer realms. Perhaps your postulates need re-evaluation. You grasp at thoughts so distant from your own--elusive and hard to contain. Surely some means of transmuting the mundane exists--perhaps even a path the the infinity those dark realms attempt to twist. Only time will tell. But are these thoughts your thoughts, or someone else’s?<BR/>");
 
 mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_1");
 game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>There is no distance between us. No false veil of time or space may intervene.<BR/><LINE>He finds you when you're sleeping, and when the Daylight fades.<LINE/><IMG>thaumcraft:textures/items/alumentum.png:0:0:255:255:0.0625</IMG><LINE>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.<LINE/>");
@@ -544,6 +548,23 @@ mods.thaumcraft.Infusion.addRecipe("ENDERMUTE",
     "",
     endestPearl, 0);
 mods.thaumcraft.Research.addInfusionPage("ENDERMUTE", endestPearl);
+
+/**
+*  Transmuting The Ichor
+*  INFINITUDE Research Tree
+*/
+mods.thaumcraft.Research.addResearch("ICHORMUTE", "INFINITUDE", "ordo 10, perditio 10", 2, 2, 8, endestPearl);
+game.setLocalization("en_US", "tc.research_name.ICHORMUTE", "Transmuting Ichor");
+mods.thaumcraft.Research.addPrereq("ICHORMUTE", "ENDERMUTE", false);
+
+mods.thaumcraft.Research.addPage("ICHORMUTE", "tc.research_page.ICHORMUTE_PAGE_1");
+game.setLocalization("en_US", "tc.research_page.ICHORMUTE_PAGE_1", "<BR>You've found a way to pull an assortment of relics from other planes by transmuting the ender singularity into a nifty lootbag....<BR/>");
+
+mods.thaumcraft.Arcane.addShapeless("ICHORMUTE", <Thaumcraft:ItemLootBag:2>, "aer 4, ordo 4, aqua 4, ignis 4, perditio 4, terra 4",, [
+    null,    ichorcloth,     null,
+    ichorcloth,    endestPearl,  ichorcloth,
+    null,          ichorcloth,     null]);
+mods.thaumcraft.Research.addArcanePage("ICHORMUTE", <Thaumcraft:ItemLootBag:2>);
 
 /**
 *  PATH OF INFINITY
