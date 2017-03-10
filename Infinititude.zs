@@ -67,6 +67,10 @@ val wrathRune           = <Botania:rune:13>;
 val envyRune            = <Botania:rune:14>;
 val prideRune           = <Botania:rune:15>;
 
+val gelumCrystallizedEssence = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "gelum"}]});
+val mortuusCrystallizedEssence = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "mortuus"}]});
+val victusCrystallizedEssence = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "victus"}]});
+val messisCrystallizedEssence = <Thaumcraft:ItemCrystalEssence>.withTag({Aspects: [{amount: 1, key: "messis"}]});
 
 val sapling             = <minecraft:sapling>;
 val saplingGreatwood    = <Thaumcraft:blockCustomPlant>;
@@ -75,9 +79,6 @@ val saplingSilverwood   = <Thaumcraft:blockCustomPlant:1>;
 //Thaumcraft Resources
 //list of all Thaumcraft research IDs: http://paste.ee/p/g82kJ
 val alumentum           = <Thaumcraft:ItemResource>;
-
-furnace.setFuel(alumentum, 640000);
-
 
 val nitor               = <Thaumcraft:ItemResource:1>;
 val thaumium            = <Thaumcraft:ItemResource:2>;
@@ -178,11 +179,16 @@ val bonemeal        = <minecraft:dye:15>;
 recipes.addShapeless(seedVoid, [nuggetVoid]);
 recipes.addShapeless(nuggetVoid, [seedVoid]);
 
+furnace.remove(<*>, greatwood);
+furnace.remove(<*>, greatwoodPlanks);
+furnace.addRecipe(alumentum, greatwood);
+furnace.addRecipe(<minecraft:coal>, greatwoodPlanks);
+
 recipes.remove(greatwoodPlanks);
 recipes.addShapeless(greatwoodPlanks*8, greatwood);
 
-
-
+furnace.setFuel(greatwood, 6400);
+furnace.setFuel(alumentum, 12800);
 
 /**
 *  INFINITUDE Research Tree
@@ -467,6 +473,52 @@ mods.thaumcraft.Arcane.addShapeless("ALFMUTE", terraSteel, "terra 25", [
     earthShard,    manaSteel,    earthShard,
     earthShard,   earthShard,    earthShard]);
 mods.thaumcraft.Research.addArcanePage("ALFMUTE", terraSteel);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", manaRune*3, "aer 4, ordo 4, aqua 4, ignis 4, perditio 4, terra 4",
+    [manaSteel, manaSteel, manaSteel,
+    manaSteel, balancedShard, manaSteel,
+    manaSteel, manaSteel, manaSteel]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", manaRune*3);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", airRune*5, "aer 2",
+    [manaSteel, manaSteel, manaSteel,
+    manaSteel, airShard, manaSteel,
+    manaSteel, manaSteel, manaSteel]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", airRune*5);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", fireRune*5, "ignis 2",
+    [manaSteel, manaSteel, manaSteel,
+    manaSteel, fireShard, manaSteel,
+    manaSteel, manaSteel, manaSteel]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", fireRune*5);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", waterRune*5, "aqua 2",
+    [manaSteel, manaSteel, manaSteel,
+    manaSteel, waterShard, manaSteel,
+    manaSteel, manaSteel, manaSteel]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", waterRune*5);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", earthRune*5, "terra 2",
+    [manaSteel, manaSteel, manaSteel,
+    manaSteel, earthShard, manaSteel,
+    manaSteel, manaSteel, manaSteel]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", earthRune*5);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", springRune*3, "aer 1, ignis 1, ordo 1, perditio 1",
+    [waterRune, victusCrystallizedEssence, fireRune]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", springRune*3);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", summerRune*3, "aer 1, ignis 1, ordo 1, perditio 1",,
+    [earthRune, messisCrystallizedEssence, airRune]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", summerRune*3);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", autumnRune*3, "aer 1, ignis 1, ordo 1, perditio 1",,
+    [fireRune, mortuusCrystallizedEssence, airRune]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", autumnRune*3);
+
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", winterRune*3, "aer 1, ignis 1, ordo 1, perditio 1",,
+    [waterRune, gelumCrystallizedEssence, earthRune]);
+mods.thaumcraft.Research.addArcanePage("ALFMUTE", winterRune*3);
 
 
 /**
