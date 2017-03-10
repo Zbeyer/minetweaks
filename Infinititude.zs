@@ -178,6 +178,10 @@ val bonemeal        = <minecraft:dye:15>;
 recipes.addShapeless(seedVoid, [nuggetVoid]);
 recipes.addShapeless(nuggetVoid, [seedVoid]);
 
+recipes.remove(greatwoodPlanks);
+recipes.addShapeless(greatwoodPlanks*8, greatwood);
+
+
 
 
 /**
