@@ -68,8 +68,8 @@ val envyRune            = <Botania:rune:14>;
 val prideRune           = <Botania:rune:15>;
 
 
-
-
+val sapling             = <minecraft:sapling>;
+val saplingGreatwood    = <Thaumcraft:blockCustomPlant>;
 val saplingSilverwood   = <Thaumcraft:blockCustomPlant:1>;
 
 //Thaumcraft Resources
@@ -95,12 +95,17 @@ val nuggetVoid          = <Thaumcraft:ItemNugget:7>;
 val etherealEssence     = <Thaumcraft:ItemWispEssence>;
 
 val greatwoodPlanks     = <Thaumcraft:blockWoodenDevice:6>;
-val greatwoodSapling    = <Thaumcraft:blockCustomPlant>;
+
 val lampOfGrowth        = <Thaumcraft:blockMetalDevice:8>;
 
 val thaumiumBlock       = <Thaumcraft:blockCosmeticSolid:4>;
 val runicMatrix         = <Thaumcraft:blockStoneDevice:2>;
 val thaumcraftPlants    = <Thaumcraft:blockCustomPlant:*>;	//silverwood/greatwood sapling, shimmerleaf, cinderpearl, ethereal bloom, vishroom
+
+val shimmerleaf = <Thaumcraft:blockCustomPlant:2>
+val cinderpearl = <Thaumcraft:blockCustomPlant:3>
+val etherealbloom = <Thaumcraft:blockCustomPlant:4>
+val vishroom = <Thaumcraft:blockCustomPlant:5>
 
 val shards  = <Thaumcraft:ItemShard:*>;
 val airShard        = <Thaumcraft:ItemShard:0>; //aer 5
@@ -113,7 +118,7 @@ val balancedShard       = <Thaumcraft:ItemShard:6>;
 
 val quicksilverNugget   = <Thaumcraft:ItemNugget:5>;
 val silverwoodPlank     = <Thaumcraft:blockWoodenDevice:7>;
-val silverwoodSapling   = <Thaumcraft:blockCustomPlant:1>;
+
 val table               = <Thaumcraft:blockTable>;
 val swordOfTheZephyr    = <Thaumcraft:ItemSwordElemental:*>;
 val pickaxeOfTheCore    = <Thaumcraft:ItemPickaxeElemental:*>;
@@ -146,6 +151,10 @@ val netherStar      = <minecraft:nether_star>;
 
 val enderPearl      = <minecraft:ender_pearl>;
 val dragonEgg       = <minecraft:dragon_egg>;
+
+val wateringCanNormal = <ExtraUtilities:watering_can:1>
+val wateringCanBroken = <ExtraUtilities:watering_can:2>
+val wateringCanReinforced = <ExtraUtilities:watering_can:3>
 
 //Vanilla Dyes
 val inkSack         = <minecraft:dye:0>;
@@ -314,34 +323,96 @@ mods.thaumcraft.Research.addArcanePage("ALTINFUSION", rodIchor);
 *  Transmuting Transmuting The Mundane
 *  INFINITUDE Research Tree
 */
-
 mods.thaumcraft.Research.addResearch("MUNDMUTE", "INFINITUDE", "ordo 10, perditio 10", 1, 1, 8, stone);
 game.setLocalization("en_US", "tc.research_name.MUNDMUTE", "Transmuting The Mondane");
 mods.thaumcraft.Research.addPrereq("MUNDMUTE", "ALTINFUSION", false);
 
-mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:lava_bucket>, "ignis 5", [
-    [null,      seedVoid,          null],
-    [null,      fireShard,          null],
-    [null,      <minecraft:bucket>, null]]);
-mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:lava_bucket>);
+// mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:stone>*3, "ignis 5", [
+//     [null,                          fireShard,                              null],
+//     [<minecraft:cobblestone>,      <minecraft:cobblestone>,                <minecraft:cobblestone>],
+//     [null,                          fireShard,                              null]]);
+// mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:stone>);
 
-mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:lava_bucket>, "ignis 5", [
-    [null,      fireShard,          null],
-    [null,      <minecraft:stone>,  null],
-    [null,      <minecraft:bucket>, null]]);
-mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:lava_bucket>);
+mods.thaumcraft.Research.addPage("MUNDMUTE", "tc.research_page.MUNDMUTE_SHARDS");
+game.setLocalization("en_US", "tc.research_page.MUNDMUTE_SHARDS", "<BR>At last, a way to easily transmute mundane objects...<BR/>");
 
-mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:lava_bucket>, "ignis 5", [
-    [null,      fireShard,                              null],
-    [null,      <minecraft:cobblestone>,                null],
-    [null,      <minecraft:bucket>,                     null]]);
-mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:lava_bucket>);
 
-mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:stone>*3, "ignis 5", [
-    [null,                          fireShard,                              null],
-    [<minecraft:cobblestone>,      <minecraft:cobblestone>,                <minecraft:cobblestone>],
-    [null,                          fireShard,                              null]]);
-mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:stone>);
+mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", airShard*3, "aer 1",
+    [feather, clayBall, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("MUNDMUTE", airShard*3);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", fireShard*3, "ignis 1",
+    [blazePowder, clayBall, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("MUNDMUTE", fireShard*3);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", waterShard*3, "aqua 1",
+    [<minecraft:fish:*>, clayBall, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("MUNDMUTE", waterShard*3);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", earthShard*3, "terra 1",
+    [<minecraft:dirt>, clayBall, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("MUNDMUTE", earthShard*3);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", orderShard*3, "ordo 1",
+    [<minecraft:stone>, clayBall, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("MUNDMUTE", orderShard*3);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", entropyShard*3, "ordo 1",
+    [<minecraft:cobblestone>, clayBall, seedVoid]);
+mods.thaumcraft.Research.addArcanePage("MUNDMUTE", entropyShard*3);
+
+/**
+*  Transmuting Herbology
+*  INFINITUDE Research Tree
+*/
+mods.thaumcraft.Research.addResearch("MUNDHERB", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 1, 8, nitor);
+mods.thaumcraft.Research.addPrereq("MUNDHERB", "MUNDMUTE", false);
+game.setLocalization("en_US", "tc.research_name.MUNDHERB", "Transmuting Herbology");
+
+mods.thaumcraft.Research.addPage("MUNDHERB", "tc.research_page.MUNDHERB_RESTORE_WATERING_CAN");
+game.setLocalization("en_US", "tc.research_page.MUNDHERB_RESTORE_WATERING_CAN", "<BR>Watering Cans can be restored with a little effort...<BR/>");
+
+mods.thaumcraft.Arcane.addShapeless("MUNDHERB", wateringCanNormal, "aer 4, ignis 4, ordo 4, perditio 4",
+    [iron, wateringCanBroken, iron]);
+mods.thaumcraft.Research.addArcanePage("MUNDHERB", wateringCanNormal);
+
+mods.thaumcraft.Research.addPage("MUNDHERB", "tc.research_page.MUNDHERB_REINFORCED_WATERING_CAN");
+game.setLocalization("en_US", "tc.research_page.MUNDHERB_REINFORCED_WATERING_CAN", "<BR>But how to improve the contraption?<BR/>");
+
+mods.thaumcraft.Arcane.addShapeless("MUNDHERB", wateringCanReinforced, "aer 8, ignis 8, aqua 100, terra 100, ordo 8, perditio 8",
+    [ingotVoid, ingotVoid, ingotVoid, ingotVoid, wateringCanNormal, ingotVoid, ingotVoid, ingotVoid, ingotVoid]);
+mods.thaumcraft.Research.addArcanePage("MUNDHERB", wateringCanReinforced);
+
+mods.thaumcraft.Research.addPage("MUNDHERB", "tc.research_page.MUNDHERB_PLANT_CHANGE");
+game.setLocalization("en_US", "tc.research_page.MUNDHERB_PLANT_CHANGE", "<BR>Sure, playing with ender particles 'can' twist one plant shape into another--but why fumble with such primitive Transmutation when the partting of the veil permits this change so effortlessly?<BR/>");
+
+mods.thaumcraft.Arcane.addShapeless("MUNDHERB", saplingGreatwood, "aer 1, ignis 1, ordo 1, perditio 1",
+    [sapling, voidseed]);
+mods.thaumcraft.Research.addArcanePage("MUNDHERB", saplingGreatwood);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDHERB", saplingSilverwood, "aer 1, ignis 1, ordo 1, perditio 1",
+    [saplingGreatwood, orderShard]);
+mods.thaumcraft.Research.addArcanePage("MUNDHERB", saplingSilverwood);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDHERB", shimmerleaf, "aer 1, ignis 1, ordo 1, perditio 1",
+    [sapling, earthShard]);
+mods.thaumcraft.Research.addArcanePage("MUNDHERB", shimmerleaf);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDHERB", cinderpearl, "aer 1, ignis 1, ordo 1, perditio 1",
+    [sapling, fireShard]);
+mods.thaumcraft.Research.addArcanePage("MUNDHERB", cinderpearl);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDHERB", etherealbloom, "aer 1, ignis 1, ordo 1, perditio 1",
+    [sapling, orderShard]);
+mods.thaumcraft.Research.addArcanePage("MUNDHERB", etherealbloom);
+
+mods.thaumcraft.Arcane.addShapeless("MUNDHERB", vishroom, "aer 1, ignis 1, ordo 1, perditio 1",
+    [<minecraft:red_mushroom>, waterShard]);
+mods.thaumcraft.Research.addArcanePage("MUNDHERB", vishroom);
+
+
+// Transmuting Herbology
+// mods.thaumcraft.Research.addPage("ALTALCHEMY", "tc.research_page.ALTALCHEMY_PAGE_1");
 
 /**
 *  Transmuting The Dead
@@ -351,28 +422,28 @@ mods.thaumcraft.Research.addResearch("MORTOMUTE", "INFINITUDE", "ordo 10, perdit
 game.setLocalization("en_US", "tc.research_name.MORTOMUTE", "Transmuting Necros");
 mods.thaumcraft.Research.addPrereq("MORTOMUTE", "MUNDMUTE", false);
 
-mods.thaumcraft.Arcane.addShaped("MORTOMUTE", bone*6, "ordo 10", [
-    [orderShard, bonemeal, orderShard],
-    [orderShard, bonemeal, orderShard],
-    [orderShard, bonemeal, orderShard]]);
+mods.thaumcraft.Arcane.addShapeless("MORTOMUTE", bone*6, "ordo 10", [
+    orderShard, bonemeal, orderShard,
+    orderShard, bonemeal, orderShard,
+    orderShard, bonemeal, orderShard]);
 mods.thaumcraft.Research.addArcanePage("MORTOMUTE", bone);
 
-mods.thaumcraft.Arcane.addShaped("MORTOMUTE", skull, "perditio 10", [
-    [bone,          bone,       bone],
-    [entropyShard,  bone,       entropyShard],
-    [bone,          bone,       bone]]);
+mods.thaumcraft.Arcane.addShapeless("MORTOMUTE", skull, "perditio 10", [
+    bone,          bone,       bone,
+    entropyShard,  bone,       entropyShard,
+    bone,          bone,       bone]);
 mods.thaumcraft.Research.addArcanePage("MORTOMUTE", skull);
 
-mods.thaumcraft.Arcane.addShaped("MORTOMUTE", witherSkull, "perditio 10", [
-    [null,  entropyShard,   null],
-    [null,  skull,          null],
-    [null,  entropyShard,   null]]);
+mods.thaumcraft.Arcane.addShapeless("MORTOMUTE", witherSkull, "perditio 10", [
+    null,  entropyShard,   null,
+    null,  skull,          null,
+    null,  entropyShard,   null]);
 mods.thaumcraft.Research.addArcanePage("MORTOMUTE", witherSkull);
 
-mods.thaumcraft.Arcane.addShaped("MORTOMUTE", netherStar, "terra 5, ignis 25, ordo 50, aer 5, aqua 5, perditio 25", [
-    [witherSkull,   witherSkull,    witherSkull],
-    [soulSand,      soulSand,       soulSand],
-    [orderShard,    fireShard,       entropyShard]]);
+mods.thaumcraft.Arcane.addShapeless("MORTOMUTE", netherStar, "terra 5, ignis 25, ordo 50, aer 5, aqua 5, perditio 25", [
+    witherSkull,   witherSkull,    witherSkull,
+    soulSand,      soulSand,       soulSand,
+    orderShard,    fireShard,       entropyShard]);
 mods.thaumcraft.Research.addArcanePage("MORTOMUTE", netherStar);
 
 mods.thaumcraft.Arcane.addShapeless("MORTOMUTE", <minecraft:soul_sand>*4, "aer 4, ordo 4, aqua 4, ignis 4, perditio 4, terra 4",
@@ -383,14 +454,14 @@ mods.thaumcraft.Research.addArcanePage("MORTOMUTE", <minecraft:soul_sand>);
 *  Transmuting Transmuting The Alfheim
 *  INFINITUDE Research Tree
 */
-mods.thaumcraft.Research.addResearch("ALFMUTE", "INFINITUDE", "ordo 10, perditio 10", 2, 1, 8, elementium);
+mods.thaumcraft.Research.addResearch("ALFMUTE", "INFINITUDE", "ordo 10, perditio 10", 3, 1, 8, elementium);
 game.setLocalization("en_US", "tc.research_name.ALFMUTE", "Transmuting Alfheim");
-mods.thaumcraft.Research.addPrereq("ALFMUTE", "MUNDMUTE", false);
+mods.thaumcraft.Research.addPrereq("ALFMUTE", "MUNDHERB", false);
 
-mods.thaumcraft.Arcane.addShaped("ALFMUTE", terraSteel, "terra 25", [
-    [earthShard,   earthShard,    earthShard],
-    [earthShard,    manaSteel,    earthShard],
-    [earthShard,   earthShard,    earthShard]]);
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", terraSteel, "terra 25", [
+    earthShard,   earthShard,    earthShard,
+    earthShard,    manaSteel,    earthShard,
+    earthShard,   earthShard,    earthShard]);
 mods.thaumcraft.Research.addArcanePage("ALFMUTE", terraSteel);
 
 
@@ -405,10 +476,10 @@ mods.thaumcraft.Research.addPrereq("ENDERMUTE", "ALFMUTE", false);
 mods.thaumcraft.Research.addPrereq("ENDERMUTE", "MUNDMUTE", false);
 
 
-mods.thaumcraft.Arcane.addShaped("ENDERMUTE", shardEnder, "ordo 15, perditio 15", [
-    [netherStar,    enderPearl,     null],
-    [enderPearl,    balancedShard,  enderPearl],
-    [null,          enderPearl,     netherStar]]);
+mods.thaumcraft.Arcane.addShapeless("ENDERMUTE", shardEnder, "ordo 15, perditio 15", [
+    netherStar,    enderPearl,     null,
+    enderPearl,    balancedShard,  enderPearl,
+    null,          enderPearl,     netherStar]);
 mods.thaumcraft.Research.addArcanePage("ENDERMUTE", shardEnder);
 
 mods.thaumcraft.Infusion.addRecipe("ENDERMUTE",
@@ -433,22 +504,22 @@ mods.thaumcraft.Infusion.addRecipe("INFINITY",
     neutroniumIngot, 0);
 mods.thaumcraft.Research.addInfusionPage("INFINITY", neutroniumIngot);
 
-mods.thaumcraft.Arcane.addShaped("INFINITY", infinityCatalyst, "ordo 150, perditio 150", [
-    [neutroniumIngot,   netherStar,                     neutroniumIngot],
-    [ichor,             <Thaumcraft:ItemResource:15>,   ichor],
-    [unstableingot,     endestPearl,                    unstableingot]]);
+mods.thaumcraft.Arcane.addShapeless("INFINITY", infinityCatalyst, "ordo 150, perditio 150", [
+    neutroniumIngot,   netherStar,                     neutroniumIngot,
+    ichor,             <Thaumcraft:ItemResource:15>,   ichor,
+    unstableingot,     endestPearl,                    unstableingot]);
 mods.thaumcraft.Research.addArcanePage("INFINITY", infinityCatalyst);
 
-mods.thaumcraft.Arcane.addShaped("INFINITY", infinityIngot, "ordo 75", [
-    [infinityCatalyst,  infinityCatalyst,   infinityCatalyst],
-    [infinityCatalyst,  neutroniumIngot,    infinityCatalyst],
-    [infinityCatalyst,  infinityCatalyst,   infinityCatalyst]]);
+mods.thaumcraft.Arcane.addShapeless("INFINITY", infinityIngot, "ordo 75", [
+    infinityCatalyst,  infinityCatalyst,   infinityCatalyst,
+    infinityCatalyst,  neutroniumIngot,    infinityCatalyst,
+    infinityCatalyst,  infinityCatalyst,   infinityCatalyst]);
 mods.thaumcraft.Research.addArcanePage("INFINITY", infinityIngot);
 
-mods.thaumcraft.Arcane.addShaped("INFINITY", <Botania:pool:1>, "ordo 45, perditio 45", [
-    [infinityCatalyst,  infinityCatalyst,   infinityCatalyst],
-    [infinityCatalyst,  <Botania:pool:0>,   infinityCatalyst],
-    [infinityCatalyst,  infinityCatalyst,   infinityCatalyst]]);
+mods.thaumcraft.Arcane.addShapeless("INFINITY", <Botania:pool:1>, "ordo 45, perditio 45", [
+    infinityCatalyst,  infinityCatalyst,   infinityCatalyst,
+    infinityCatalyst,  <Botania:pool:0>,   infinityCatalyst,
+    infinityCatalyst,  infinityCatalyst,   infinityCatalyst]);
 mods.thaumcraft.Research.addArcanePage("INFINITY", <Botania:pool:1>);
 
 /**
