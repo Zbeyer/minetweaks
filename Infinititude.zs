@@ -375,50 +375,50 @@ mods.thaumcraft.Research.addArcanePage("MUNDMUTE", entropyShard*3);
 *  Transmuting Herbology
 *  INFINITUDE Research Tree
 */
-mods.thaumcraft.Research.addResearch("MUNDHERB", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 1, 8, nitor);
-mods.thaumcraft.Research.addPrereq("MUNDHERB", "MUNDMUTE", false);
-game.setLocalization("en_US", "tc.research_name.MUNDHERB", "Transmuting Herbology");
+mods.thaumcraft.Research.addResearch("HERBMUTE", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 1, 8, nitor);
+mods.thaumcraft.Research.addPrereq("HERBMUTE", "MUNDMUTE", false);
+game.setLocalization("en_US", "tc.research_name.HERBMUTE", "Transmuting Herbology");
 
-mods.thaumcraft.Research.addPage("MUNDHERB", "tc.research_page.MUNDHERB_RESTORE_WATERING_CAN");
-game.setLocalization("en_US", "tc.research_page.MUNDHERB_RESTORE_WATERING_CAN", "<BR>Watering Cans can be restored with a little effort...<BR/>");
+mods.thaumcraft.Research.addPage("HERBMUTE", "tc.research_page.HERBMUTE_RESTORE_WATERING_CAN");
+game.setLocalization("en_US", "tc.research_page.HERBMUTE_RESTORE_WATERING_CAN", "<BR>Watering Cans can be restored with a little effort...<BR/>");
 
-mods.thaumcraft.Arcane.addShapeless("MUNDHERB", wateringCanNormal, "aer 4, ignis 4, ordo 4, perditio 4",
+mods.thaumcraft.Arcane.addShapeless("HERBMUTE", wateringCanNormal, "aer 4, ignis 4, ordo 4, perditio 4",
     [iron, wateringCanBroken, iron]);
-mods.thaumcraft.Research.addArcanePage("MUNDHERB", wateringCanNormal);
+mods.thaumcraft.Research.addArcanePage("HERBMUTE", wateringCanNormal);
 
-mods.thaumcraft.Research.addPage("MUNDHERB", "tc.research_page.MUNDHERB_REINFORCED_WATERING_CAN");
-game.setLocalization("en_US", "tc.research_page.MUNDHERB_REINFORCED_WATERING_CAN", "<BR>But how to improve the contraption?<BR/>");
+mods.thaumcraft.Research.addPage("HERBMUTE", "tc.research_page.HERBMUTE_REINFORCED_WATERING_CAN");
+game.setLocalization("en_US", "tc.research_page.HERBMUTE_REINFORCED_WATERING_CAN", "<BR>But how to improve the contraption?<BR/>");
 
-mods.thaumcraft.Arcane.addShapeless("MUNDHERB", wateringCanReinforced, "aer 8, ignis 8, aqua 100, terra 100, ordo 8, perditio 8",
+mods.thaumcraft.Arcane.addShapeless("HERBMUTE", wateringCanReinforced, "aer 8, ignis 8, aqua 100, terra 100, ordo 8, perditio 8",
     [ingotVoid, ingotVoid, ingotVoid, ingotVoid, wateringCanNormal, ingotVoid, ingotVoid, ingotVoid, ingotVoid]);
-mods.thaumcraft.Research.addArcanePage("MUNDHERB", wateringCanReinforced);
+mods.thaumcraft.Research.addArcanePage("HERBMUTE", wateringCanReinforced);
 
-mods.thaumcraft.Research.addPage("MUNDHERB", "tc.research_page.MUNDHERB_PLANT_CHANGE");
-game.setLocalization("en_US", "tc.research_page.MUNDHERB_PLANT_CHANGE", "<BR>Sure, playing with ender particles 'can' twist one plant shape into another--but why fumble with such primitive Transmutation when the partting of the veil permits this change so effortlessly?<BR/>");
+mods.thaumcraft.Research.addPage("HERBMUTE", "tc.research_page.HERBMUTE_PLANT_CHANGE");
+game.setLocalization("en_US", "tc.research_page.HERBMUTE_PLANT_CHANGE", "<BR>Sure, playing with ender particles 'can' twist one plant shape into another--but why fumble with such primitive Transmutation when the partting of the veil permits this change so effortlessly?<BR/>");
 
-mods.thaumcraft.Arcane.addShapeless("MUNDHERB", saplingGreatwood, "aer 1, ignis 1, ordo 1, perditio 1",
+mods.thaumcraft.Arcane.addShapeless("HERBMUTE", saplingGreatwood, "aer 1, ignis 1, ordo 1, perditio 1",
     [sapling, voidseed]);
-mods.thaumcraft.Research.addArcanePage("MUNDHERB", saplingGreatwood);
+mods.thaumcraft.Research.addArcanePage("HERBMUTE", saplingGreatwood);
 
-mods.thaumcraft.Arcane.addShapeless("MUNDHERB", saplingSilverwood, "aer 1, ignis 1, ordo 1, perditio 1",
+mods.thaumcraft.Arcane.addShapeless("HERBMUTE", saplingSilverwood, "aer 1, ignis 1, ordo 1, perditio 1",
     [saplingGreatwood, orderShard]);
-mods.thaumcraft.Research.addArcanePage("MUNDHERB", saplingSilverwood);
+mods.thaumcraft.Research.addArcanePage("HERBMUTE", saplingSilverwood);
 
-mods.thaumcraft.Arcane.addShapeless("MUNDHERB", shimmerleaf, "aer 1, ignis 1, ordo 1, perditio 1",
+mods.thaumcraft.Arcane.addShapeless("HERBMUTE", shimmerleaf, "aer 1, ignis 1, ordo 1, perditio 1",
     [sapling, earthShard]);
-mods.thaumcraft.Research.addArcanePage("MUNDHERB", shimmerleaf);
+mods.thaumcraft.Research.addArcanePage("HERBMUTE", shimmerleaf);
 
-mods.thaumcraft.Arcane.addShapeless("MUNDHERB", cinderpearl, "aer 1, ignis 1, ordo 1, perditio 1",
+mods.thaumcraft.Arcane.addShapeless("HERBMUTE", cinderpearl, "aer 1, ignis 1, ordo 1, perditio 1",
     [sapling, fireShard]);
-mods.thaumcraft.Research.addArcanePage("MUNDHERB", cinderpearl);
+mods.thaumcraft.Research.addArcanePage("HERBMUTE", cinderpearl);
 
-mods.thaumcraft.Arcane.addShapeless("MUNDHERB", etherealbloom, "aer 1, ignis 1, ordo 1, perditio 1",
+mods.thaumcraft.Arcane.addShapeless("HERBMUTE", etherealbloom, "aer 1, ignis 1, ordo 1, perditio 1",
     [sapling, orderShard]);
-mods.thaumcraft.Research.addArcanePage("MUNDHERB", etherealbloom);
+mods.thaumcraft.Research.addArcanePage("HERBMUTE", etherealbloom);
 
-mods.thaumcraft.Arcane.addShapeless("MUNDHERB", vishroom, "aer 1, ignis 1, ordo 1, perditio 1",
+mods.thaumcraft.Arcane.addShapeless("HERBMUTE", vishroom, "aer 1, ignis 1, ordo 1, perditio 1",
     [<minecraft:red_mushroom>, waterShard]);
-mods.thaumcraft.Research.addArcanePage("MUNDHERB", vishroom);
+mods.thaumcraft.Research.addArcanePage("HERBMUTE", vishroom);
 
 
 // Transmuting Herbology
@@ -466,7 +466,7 @@ mods.thaumcraft.Research.addArcanePage("MORTOMUTE", <minecraft:soul_sand>);
 */
 mods.thaumcraft.Research.addResearch("ALFMUTE", "INFINITUDE", "ordo 10, perditio 10", 3, 1, 8, elementium);
 game.setLocalization("en_US", "tc.research_name.ALFMUTE", "Transmuting Alfheim");
-mods.thaumcraft.Research.addPrereq("ALFMUTE", "MUNDHERB", false);
+mods.thaumcraft.Research.addPrereq("ALFMUTE", "HERBMUTE", false);
 
 mods.thaumcraft.Arcane.addShapeless("ALFMUTE", terraSteel, "terra 25", [
     earthShard,   earthShard,    earthShard,
