@@ -342,12 +342,6 @@ mods.thaumcraft.Research.addResearch("MUNDMUTE", "INFINITUDE", "ordo 10, perditi
 game.setLocalization("en_US", "tc.research_name.MUNDMUTE", "Transmuting The Mondane");
 mods.thaumcraft.Research.addPrereq("MUNDMUTE", "ALTINFUSION", false);
 
-// mods.thaumcraft.Arcane.addShaped("MUNDMUTE", <minecraft:stone>*3, "ignis 5", [
-//     [null,                          fireShard,                              null],
-//     [<minecraft:cobblestone>,      <minecraft:cobblestone>,                <minecraft:cobblestone>],
-//     [null,                          fireShard,                              null]]);
-// mods.thaumcraft.Research.addArcanePage("MUNDMUTE", <minecraft:stone>);
-
 mods.thaumcraft.Research.addPage("MUNDMUTE", "tc.research_page.MUNDMUTE_SHARDS");
 game.setLocalization("en_US", "tc.research_page.MUNDMUTE_SHARDS", "<BR>At last, a way to easily transmute mundane objects...<BR/>");
 
@@ -449,10 +443,10 @@ mods.thaumcraft.Arcane.addShapeless("MORTOMUTE", skull, "perditio 10", [
     bone,          bone,       bone]);
 mods.thaumcraft.Research.addArcanePage("MORTOMUTE", skull);
 
-mods.thaumcraft.Arcane.addShapeless("MORTOMUTE", witherSkull, "perditio 10", [
-    null,  entropyShard,   null,
-    null,  skull,          null,
-    null,  entropyShard,   null]);
+mods.thaumcraft.Arcane.addShaped("MORTOMUTE", witherSkull, "perditio 10", [
+    [null,  entropyShard,   null],
+    [null,  skull,          null],
+    [null,  entropyShard,   null]]);
 mods.thaumcraft.Research.addArcanePage("MORTOMUTE", witherSkull);
 
 mods.thaumcraft.Arcane.addShapeless("MORTOMUTE", netherStar, "terra 5, ignis 25, ordo 50, aer 5, aqua 5, perditio 25", [
@@ -538,9 +532,9 @@ mods.thaumcraft.Research.addPrereq("ENDERMUTE", "MUNDMUTE", false);
 
 
 mods.thaumcraft.Arcane.addShapeless("ENDERMUTE", shardEnder, "ordo 15, perditio 15", [
-    netherStar,    enderPearl,     null,
+    netherStar,    enderPearl,     enderPearl,
     enderPearl,    balancedShard,  enderPearl,
-    null,          enderPearl,     netherStar]);
+    enderPearl,          enderPearl,     netherStar]);
 mods.thaumcraft.Research.addArcanePage("ENDERMUTE", shardEnder);
 
 mods.thaumcraft.Infusion.addRecipe("ENDERMUTE",
@@ -575,11 +569,11 @@ mods.thaumcraft.Research.addPrereq("ICHORMUTE", "ENDERMUTE", false);
 mods.thaumcraft.Research.addPage("ICHORMUTE", "tc.research_page.ICHORMUTE_PAGE_1");
 game.setLocalization("en_US", "tc.research_page.ICHORMUTE_PAGE_1", "<BR>You've found a way to pull an assortment of relics from other planes by transmuting the ender singularity into a nifty lootbag....<BR/>");
 
-mods.thaumcraft.Arcane.addShapeless("ICHORMUTE", <Thaumcraft:ItemLootBag:2>, "aer 4, ordo 4, aqua 4, ignis 4, perditio 4, terra 4", [
-    null,    ichorcloth,     null,
+mods.thaumcraft.Arcane.addShapeless("ICHORMUTE", <Thaumcraft:ItemLootBag:2>*4, "aer 4, ordo 4, aqua 4, ignis 4, perditio 4, terra 4", [
+    enderPearl,    ichorcloth,     enderPearl,
     ichorcloth,    endestPearl,  ichorcloth,
-    null,          ichorcloth,     null]);
-mods.thaumcraft.Research.addArcanePage("ICHORMUTE", <Thaumcraft:ItemLootBag:2>);
+    enderPearl,          ichorcloth,     enderPearl]);
+mods.thaumcraft.Research.addArcanePage("ICHORMUTE", <Thaumcraft:ItemLootBag:2>*4);
 
 /**
 *  PATH OF INFINITY
