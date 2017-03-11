@@ -550,6 +550,20 @@ mods.thaumcraft.Infusion.addRecipe("ENDERMUTE",
     endestPearl, 0);
 mods.thaumcraft.Research.addInfusionPage("ENDERMUTE", endestPearl);
 
+
+/**
+*  Transmuting Transmuting The Ender
+*  INFINITUDE Research Tree
+*/
+mods.thaumcraft.Research.addResearch("NEGAMUTE", "INFINITUDE", "ordo 10, perditio 10", -1, 2, 8, <ExtraUtilities:unstableingot:2>);
+game.setLocalization("en_US", "tc.research_name.NEGAMUTE", "Transmuting Negative");
+mods.thaumcraft.Research.addPrereq("NEGAMUTE", "ENDERMUTE", false);
+mods.thaumcraft.Arcane.addShapeless("NEGAMUTE", <ExtraUtilities:unstableingot:2>*3, "ordo 25, perditio 25", [
+    orderShard,    <minecraft:diamond>,     entropyShard,
+    ingotVoid,               ingotVoid,        ingotVoid]);
+mods.thaumcraft.Research.addArcanePage("NEGAMUTE", <ExtraUtilities:unstableingot:2>*3);
+//
+
 /**
 *  Transmuting The Ichor
 *  INFINITUDE Research Tree
