@@ -96,6 +96,7 @@ val nuggetVoid          = <Thaumcraft:ItemNugget:7>;
 val etherealEssence     = <Thaumcraft:ItemWispEssence>;
 
 val greatwoodPlanks     = <Thaumcraft:blockWoodenDevice:6>;
+val greatwood           = <Thaumcraft:blockMagicalLog>;
 
 val lampOfGrowth        = <Thaumcraft:blockMetalDevice:8>;
 
@@ -103,10 +104,10 @@ val thaumiumBlock       = <Thaumcraft:blockCosmeticSolid:4>;
 val runicMatrix         = <Thaumcraft:blockStoneDevice:2>;
 val thaumcraftPlants    = <Thaumcraft:blockCustomPlant:*>;	//silverwood/greatwood sapling, shimmerleaf, cinderpearl, ethereal bloom, vishroom
 
-val shimmerleaf = <Thaumcraft:blockCustomPlant:2>
-val cinderpearl = <Thaumcraft:blockCustomPlant:3>
-val etherealbloom = <Thaumcraft:blockCustomPlant:4>
-val vishroom = <Thaumcraft:blockCustomPlant:5>
+val shimmerleaf = <Thaumcraft:blockCustomPlant:2>;
+val cinderpearl = <Thaumcraft:blockCustomPlant:3>;
+val etherealbloom = <Thaumcraft:blockCustomPlant:4>;
+val vishroom = <Thaumcraft:blockCustomPlant:5>;
 
 val shards  = <Thaumcraft:ItemShard:*>;
 val airShard        = <Thaumcraft:ItemShard:0>; //aer 5
@@ -153,9 +154,9 @@ val netherStar      = <minecraft:nether_star>;
 val enderPearl      = <minecraft:ender_pearl>;
 val dragonEgg       = <minecraft:dragon_egg>;
 
-val wateringCanNormal = <ExtraUtilities:watering_can:1>
-val wateringCanBroken = <ExtraUtilities:watering_can:2>
-val wateringCanReinforced = <ExtraUtilities:watering_can:3>
+val wateringCanNormal = <ExtraUtilities:watering_can:1>;
+val wateringCanBroken = <ExtraUtilities:watering_can:2>;
+val wateringCanReinforced = <ExtraUtilities:watering_can:3>;
 
 //Vanilla Dyes
 val inkSack         = <minecraft:dye:0>;
@@ -179,13 +180,13 @@ val bonemeal        = <minecraft:dye:15>;
 recipes.addShapeless(seedVoid, [nuggetVoid]);
 recipes.addShapeless(nuggetVoid, [seedVoid]);
 
-furnace.remove(<*>, greatwood);
-furnace.remove(<*>, greatwoodPlanks);
+// furnace.remove(<minecraft:coal:1>, greatwood);
+// furnace.remove(<*>, greatwoodPlanks);
 furnace.addRecipe(alumentum, greatwood);
 furnace.addRecipe(<minecraft:coal>, greatwoodPlanks);
 
 recipes.remove(greatwoodPlanks);
-recipes.addShapeless(greatwoodPlanks*8, greatwood);
+recipes.addShapeless(greatwoodPlanks*8, [greatwood]);
 
 furnace.setFuel(greatwood, 6400);
 furnace.setFuel(alumentum, 12800);
@@ -210,7 +211,7 @@ mods.thaumcraft.Research.addPrereq("ORDERANDCHAOS", "VOIDMETAL", false);
 mods.thaumcraft.Research.addSibling("VOIDMETAL", "ORDERANDCHAOS");
 
 mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_0");
-game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>Forbidden knowlege allowed you to glimpse beyond the veil. Your thought frayed among cosmic imaginings. A strange divide stands between natural and eldridge lore. There seemed some peculiar order amidst those precarious ruins glimpsed by dreams of outer realms. Perhaps your postulates need re-evaluation? You grasp at thoughts so distant from your own--elusive and hard to contain. Surely some means of transmuting the mundane exists--perhaps even a path to the infinity those dark realms have twist. But are these thoughts your thoughts, or someone else’s? You didn't write these words. I did.<BR/>");
+game.setLocalization("en_US", "tc.research_page.OAC_PG_0", "<BR>Forbidden knowlege allowed you to glimpse beyond the veil. Your thought frayed among cosmic imaginings. A strange divide stands between natural and eldridge lore. There seemed some peculiar order amidst those precarious ruins glimpsed by dreams of outer realms. Perhaps your postulates need re-evaluation? You grasp at thoughts so distant from your own--elusive and hard to contain. Surely some means of transmuting the mundane exists--perhaps even a path to the infinity those dark realms have twist. But are these thoughts your thoughts, or someone else's? You didn't write these words. I did.<BR/>");
 
 mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_1");
 game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>There is no distance between us. No false span of time nor space may intervene. Clearly we see you now in that forgotten place. Clearly beckon you toward the chamber you've never seen.<BR/><LINE>He finds you when you're sleeping, and when the daylight fades. It calls to you by weeping while sharpening its blades.<LINE/><BR>There are black zones of shadow close to our daily paths, and now and then some evil soul breaks a passage through. When that happens, the man who knows must strike before reckoning the consequences.<BR/>");
@@ -401,7 +402,7 @@ mods.thaumcraft.Research.addPage("HERBMUTE", "tc.research_page.HERBMUTE_PLANT_CH
 game.setLocalization("en_US", "tc.research_page.HERBMUTE_PLANT_CHANGE", "<BR>Sure, playing with ender particles 'can' twist one plant shape into another--but why fumble with such primitive Transmutation when the partting of the veil permits this change so effortlessly?<BR/>");
 
 mods.thaumcraft.Arcane.addShapeless("HERBMUTE", saplingGreatwood, "aer 1, ignis 1, ordo 1, perditio 1",
-    [sapling, voidseed]);
+    [sapling, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("HERBMUTE", saplingGreatwood);
 
 mods.thaumcraft.Arcane.addShapeless("HERBMUTE", saplingSilverwood, "aer 1, ignis 1, ordo 1, perditio 1",
@@ -512,15 +513,15 @@ mods.thaumcraft.Arcane.addShapeless("ALFMUTE", springRune*3, "aer 1, ignis 1, or
     [waterRune, victusCrystallizedEssence, fireRune]);
 mods.thaumcraft.Research.addArcanePage("ALFMUTE", springRune*3);
 
-mods.thaumcraft.Arcane.addShapeless("ALFMUTE", summerRune*3, "aer 1, ignis 1, ordo 1, perditio 1",,
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", summerRune*3, "aer 1, ignis 1, ordo 1, perditio 1",
     [earthRune, messisCrystallizedEssence, airRune]);
 mods.thaumcraft.Research.addArcanePage("ALFMUTE", summerRune*3);
 
-mods.thaumcraft.Arcane.addShapeless("ALFMUTE", autumnRune*3, "aer 1, ignis 1, ordo 1, perditio 1",,
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", autumnRune*3, "aer 1, ignis 1, ordo 1, perditio 1",
     [fireRune, mortuusCrystallizedEssence, airRune]);
 mods.thaumcraft.Research.addArcanePage("ALFMUTE", autumnRune*3);
 
-mods.thaumcraft.Arcane.addShapeless("ALFMUTE", winterRune*3, "aer 1, ignis 1, ordo 1, perditio 1",,
+mods.thaumcraft.Arcane.addShapeless("ALFMUTE", winterRune*3, "aer 1, ignis 1, ordo 1, perditio 1",
     [waterRune, gelumCrystallizedEssence, earthRune]);
 mods.thaumcraft.Research.addArcanePage("ALFMUTE", winterRune*3);
 
@@ -560,7 +561,7 @@ mods.thaumcraft.Research.addPrereq("ICHORMUTE", "ENDERMUTE", false);
 mods.thaumcraft.Research.addPage("ICHORMUTE", "tc.research_page.ICHORMUTE_PAGE_1");
 game.setLocalization("en_US", "tc.research_page.ICHORMUTE_PAGE_1", "<BR>You've found a way to pull an assortment of relics from other planes by transmuting the ender singularity into a nifty lootbag....<BR/>");
 
-mods.thaumcraft.Arcane.addShapeless("ICHORMUTE", <Thaumcraft:ItemLootBag:2>, "aer 4, ordo 4, aqua 4, ignis 4, perditio 4, terra 4",, [
+mods.thaumcraft.Arcane.addShapeless("ICHORMUTE", <Thaumcraft:ItemLootBag:2>, "aer 4, ordo 4, aqua 4, ignis 4, perditio 4, terra 4", [
     null,    ichorcloth,     null,
     ichorcloth,    endestPearl,  ichorcloth,
     null,          ichorcloth,     null]);
