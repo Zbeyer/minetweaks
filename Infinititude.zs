@@ -214,7 +214,7 @@ mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_0");
 game.setLocalization("en_US", "tc.research_page.OAC_PG_0", "<BR>Forbidden knowlege allowed you to glimpse beyond the veil. Your thought frayed among cosmic imaginings. A strange divide stands between natural and eldridge lore. There seemed some peculiar order amidst those precarious ruins glimpsed by dreams of outer realms. Perhaps your postulates need re-evaluation? You grasp at thoughts so distant from your own--elusive and hard to contain. Surely some means of transmuting the mundane exists--perhaps even a path to the infinity those dark realms have twist. But are these thoughts your thoughts, or someone else's? You didn't write these words. I did.<BR/>");
 
 mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_1");
-game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>There is no distance between us. No false span of time nor space may intervene. Clearly we see you now in that forgotten place. Clearly beckon you toward the chamber you've never seen.<BR/><LINE>He finds you when you're sleeping, and when the daylight fades. It calls to you by weeping while sharpening its blades.<LINE/><BR>There are black zones of shadow close to our daily paths, and now and then some evil soul breaks a passage through. When that happens, the man who knows must strike before reckoning the consequences.<BR/>");
+game.setLocalization("en_US", "tc.research_page.OAC_PG_1", "<BR>There is no distance between us. No false span of time nor space may intervene. Clearly we see you now in that forgotten place...<BR/><LINE>He finds you when you're sleeping, and when the daylight fades. It calls to you by weeping while sharpening its blades.<LINE/><BR>There are black zones of shadow close to our daily paths, and now and then some evil soul breaks a passage through. When that happens, the man who knows must strike before reckoning the consequences.<BR/>");
 
 mods.thaumcraft.Research.addPage("ORDERANDCHAOS", "tc.research_page.OAC_PG_2");
 game.setLocalization("en_US", "tc.research_page.OAC_PG_2", "<BR>The pit of the shoggoths! Down the six thousand steps-abomination of abominations! Never would let her take me. Then I found myself there! Iä! Shub-Niggurath.! Shape rose up from the altar, & 500 howled. Hooded Thing bleated 'Kamog! Kamog!', (old Ephraim's secret name). I was there, where she promised she wouldn't take me. A minute before I was locked in the library, and then I was there where she had gone with my body, in the place of utter blasphemy, the unholy pit where the black realm begins and the watcher guards the gate. I saw a shoggoth, it changed shape. I can't stand it. I won't stand it. I'll kill her if she ever sends me there again. I'll kill that entity. her, him, it. I'll kill it! I'll kill it with my own hands!<BR/>");
@@ -372,7 +372,7 @@ mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", orderShard*3, "ordo 1",
     [<minecraft:stone>, clayBall, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("MUNDMUTE", orderShard*3);
 
-mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", entropyShard*3, "ordo 1",
+mods.thaumcraft.Arcane.addShapeless("MUNDMUTE", entropyShard*3, "perditio 1",
     [<minecraft:cobblestone>, clayBall, seedVoid]);
 mods.thaumcraft.Research.addArcanePage("MUNDMUTE", entropyShard*3);
 
@@ -380,7 +380,7 @@ mods.thaumcraft.Research.addArcanePage("MUNDMUTE", entropyShard*3);
 *  Transmuting Herbology
 *  INFINITUDE Research Tree
 */
-mods.thaumcraft.Research.addResearch("HERBMUTE", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 1, 8, nitor);
+mods.thaumcraft.Research.addResearch("HERBMUTE", "INFINITUDE", "aer 5, ignis 5, aqua 5, terra 5, ordo 5, perditio 5", 2, 1, 8, saplingSilverwood);
 mods.thaumcraft.Research.addPrereq("HERBMUTE", "MUNDMUTE", false);
 game.setLocalization("en_US", "tc.research_name.HERBMUTE", "Transmuting Herbology");
 
@@ -554,7 +554,7 @@ mods.thaumcraft.Research.addInfusionPage("ENDERMUTE", endestPearl);
 *  Transmuting The Ichor
 *  INFINITUDE Research Tree
 */
-mods.thaumcraft.Research.addResearch("ICHORMUTE", "INFINITUDE", "ordo 10, perditio 10", 2, 2, 8, endestPearl);
+mods.thaumcraft.Research.addResearch("ICHORMUTE", "INFINITUDE", "ordo 10, perditio 10", 3, 2, 8, ichorcloth);
 game.setLocalization("en_US", "tc.research_name.ICHORMUTE", "Transmuting Ichor");
 mods.thaumcraft.Research.addPrereq("ICHORMUTE", "ENDERMUTE", false);
 
